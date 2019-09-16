@@ -16,7 +16,7 @@
 } */
 
 #mainleft {
-	border: 0px solid #000;
+	border: 1px solid #000;
 	padding: 15px;
 }
 
@@ -50,7 +50,7 @@
 #clock {
 	padding-top: 15px;
 	color: black;
-	font-size: 30px;
+	font-size: 35px;
 }
 
 .board-table {
@@ -118,7 +118,6 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
 }
 </style>
-<script type="text/javascript" src="./resources/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">
@@ -184,7 +183,7 @@ table.greenTable tfoot .links a{
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
 		<div class="row">
-			<div id="aside" class="col-sm-3">
+			<div id="aside" class="col-sm-2">
 				<!-- 출결 체크박스 -->
 				<div class="clock-form">
 					<div id="clock"></div><br />
@@ -193,7 +192,7 @@ table.greenTable tfoot .links a{
 				</div>
 			</div>
 
-			<div id="mainleft" class="col-sm-5">
+			<div id="mainleft" class="col-sm-4">
 				<!-- 공지사항 -->
 				<div class="board">
 					<h3>공지사항</h3>
@@ -213,6 +212,7 @@ table.greenTable tfoot .links a{
 								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
 								<td class="date">작성일</td>
 							</tr>
+							
 						</tbody>
 					</table>
 					<a href="#" class="more"><img
@@ -238,9 +238,15 @@ table.greenTable tfoot .links a{
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
 				</div>
 			</div>
-			<div class="col-sm-4"></div>
+			<div class="col-sm-4" style="border: 1px solid black;">
+			<h3>캘린더</h3>
+			</div>
+			<div class="col-sm-2" style="border: 1px solid black;">
+			<h3>채팅목록</h3>
+			</div>
 			</div>
 		</div>
 	</div>
+	<script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

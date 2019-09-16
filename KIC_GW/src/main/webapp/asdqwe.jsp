@@ -27,12 +27,16 @@ body {
 	height:70px;   
 	background:#ccc;
 }
+li {
+	width: 200px;
+	text-align: center;
+}
 </style>
 
     <div id="header"></div>
     <div id='cssmenu'>
 	<ul>
-   <li><a href='#'>Home</a></li>
+   <li><a href='./main2.jsp'>Home</a></li>
    <li><a href='./main.jsp'>메뉴</a></li>
    <li><a href='#'>Company</a></li>
    <li><a href='#'>Contact</a></li>
