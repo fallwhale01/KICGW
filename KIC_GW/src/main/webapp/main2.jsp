@@ -7,12 +7,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="./resources/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <title>메인페이지</title>
 <style type="text/css">
-#aside {
+/* #aside {
 	position: absolute;
 	left: 0;
-}
+} */
 
 #mainleft {
 	position: absolute;
@@ -37,8 +39,8 @@
 	left: 10%;
 	border: 12px solid #47c9af;
 	text-align: center;
-	width: 300px;
-	height: 190px;
+	width: 100%;
+	height: 200px;
 }
 
 .checkin {
@@ -56,11 +58,12 @@
 #clock {
 	padding-top: 15px;
 	color: #666;
-	font-size: 50px;
+	font-size: 30px;
 }
 
 .board-table {
 	border: 3px solid #47c9af;
+	width: 100%;
 }
 
 th {
@@ -162,7 +165,7 @@ table.greenTable tfoot .links a{
 		}
 		// 요일 출력 구문 
 		var dayWeek = week[currentDate.getDay()];
-		clock.innerHTML = "<span style='font-size: 40px'>" + calendar + ' (' +dayWeek + ') '
+		clock.innerHTML = "<span style='font-size: 30px'>" + calendar + ' (' +dayWeek + ') '
 				+ "</span><br />" + currentHours + ":" + currentMinute + ":"
 				+ currentSeconds; //날짜를 출력해 줌
 
@@ -187,7 +190,8 @@ table.greenTable tfoot .links a{
 	<div id="wrapper">
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
-			<div id="aside">
+		<div class="row">
+			<div id="aside" class="col-sm-3">
 				<!-- 출결 체크박스 -->
 				<div class="clock-form">
 					<div id="clock"></div>
@@ -196,7 +200,7 @@ table.greenTable tfoot .links a{
 				</div>
 			</div>
 
-			<div id="mainleft">
+			<div id="mainleft" class="col-sm-5">
 				<!-- 공지사항 -->
 				<div class="board">
 					<h3>공지사항</h3>
@@ -240,6 +244,8 @@ table.greenTable tfoot .links a{
 					<a href="#" class="more"><img
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
 				</div>
+			</div>
+			<div class="col-sm-4"></div>
 			</div>
 		</div>
 	</div>

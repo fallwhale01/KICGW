@@ -24,10 +24,10 @@ body {
 	height:70px;
 }
 
-#aside {
+/* #aside {
 	position: absolute;
 	left: 0%;
-}
+} */
 
 #main {
 	position: absolute;
