@@ -191,7 +191,7 @@ table.greenTable tfoot .links a{
 				<!-- 출결 체크박스 -->
 				<div class="clock-form">
 					<div id="clock"></div>
-					<button class="checkin">출근하기</button>
+					<button class="checkin">출근하기123</button>
 					<button class="checkout">퇴근하기</button>
 				</div>
 			</div>
