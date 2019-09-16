@@ -2,48 +2,28 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./resources/styles.css">
-<script src="text/javascript">
-</script>
 <style type="text/css">
-
-html,
 
 body {
 	margin: 0;
-	margin-left: 20px;
-	margin-right: 20px;
-	padding:10;
+	margin-left: 40px;
+	margin-right: 40px;
 	height:100%;
-}
-
-#wrapper {
-	position:relative;
 }
 
 #header {
 	height:70px;
 }
 
-/* #aside {
-	position: absolute;
-	left: 0%;
-} */
-
-#main {
-	position: absolute;
-	left: 20%;
-}
-
 #container {
-	margin: 4px;
-	padding:20px;
-
+	margin: 0px;
+	padding-top: 20px;
 }
 
 #footer {
 	position:fixed;
 	bottom:0;
-	width:100%;
+	width: 95.5%;
 	height:70px;   
 	background:#ccc;
 }

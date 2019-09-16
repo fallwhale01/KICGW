@@ -8,7 +8,6 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="./resources/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <title>메인페이지</title>
 <style type="text/css">
 /* #aside {
@@ -17,8 +16,6 @@
 } */
 
 #mainleft {
-	position: absolute;
-	left: 25%;
 	border: 1px solid #000;
 	padding: 15px;
 }
@@ -35,23 +32,16 @@
 }
 
 .clock-form {
-	position: absolute;
-	left: 10%;
 	border: 12px solid #47c9af;
 	text-align: center;
-	width: 100%;
 	height: 200px;
 }
 
 .checkin {
-	position: absolute;
-	bottom: 10%;
 	left: 23%
 }
 
 .checkout {
-	position: absolute;
-	bottom: 10%;
 	left: 53%;
 }
 
@@ -126,6 +116,7 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
 }
 </style>
+<script type="text/javascript" src="./resources/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">

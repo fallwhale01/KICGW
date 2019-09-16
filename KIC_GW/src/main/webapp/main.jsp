@@ -21,7 +21,6 @@
 		</div>
 		<div id = "main">
 		<!-- 메뉴 페이지의 내용이 들어갈 부분 -->
-		main
 		</div>
 		
 	</div>
