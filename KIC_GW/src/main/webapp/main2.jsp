@@ -227,7 +227,7 @@ table.greenTable tfoot .links a{
 					<table class="greenTable">
 						<thead>
 							<tr>
-								<th colspan="4">결재대기 문서</th>
+								<th colspan="4">결재 문서</th>
 								<th>작성일</th>
 							</tr>
 						</thead>
