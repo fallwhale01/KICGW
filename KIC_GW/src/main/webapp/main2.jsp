@@ -32,22 +32,25 @@
 }
 
 .clock-form {
-	border: 12px solid #47c9af;
+	border-radius: 10px;
+	background-color: ;
+	border: 5px solid black;
 	text-align: center;
 	height: 200px;
 }
 
 .checkin {
-	left: 23%
+	/* 버튼 디자인  */
+	
 }
 
 .checkout {
-	left: 53%;
+	/* 버튼 디자인  */
 }
 
 #clock {
 	padding-top: 15px;
-	color: #666;
+	color: black;
 	font-size: 30px;
 }
 
@@ -150,8 +153,8 @@ table.greenTable tfoot .links a{
 		var currentSecond = addZeros(currentDate.getSeconds(), 2);
 		var currentSeconds = addZeros(currentDate.getSeconds(), 2);
 
-		if (currentSeconds >= 50) {		// 50초 이상일 때 색을 변환해 준다.
-			currentSeconds = '<span style="color:#de1951;">' + currentSeconds
+		if (currentSeconds >= 0) {		// 50초 이상일 때 색을 변환해 준다.
+			currentSeconds = '<span style="color:grey;">' + currentSeconds
 					+ '</span>'
 		}
 		// 요일 출력 구문 
@@ -185,9 +188,9 @@ table.greenTable tfoot .links a{
 			<div id="aside" class="col-sm-3">
 				<!-- 출결 체크박스 -->
 				<div class="clock-form">
-					<div id="clock"></div>
-					<button class="checkin">출근하기</button>
-					<button class="checkout">퇴근하기</button>
+					<div id="clock"></div><br />
+					<button class="btn btn-outline-dark checkin">출근하기</button>&nbsp;&nbsp;&nbsp;
+					<button class="btn btn-outline-dark checkout">퇴근하기</button>
 				</div>
 			</div>
 
