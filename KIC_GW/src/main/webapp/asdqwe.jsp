@@ -16,7 +16,7 @@ body {
 }
 
 #container {
-	margin: 0px;
+	margin-right: 0px;
 	padding-top: 20px;
 }
 

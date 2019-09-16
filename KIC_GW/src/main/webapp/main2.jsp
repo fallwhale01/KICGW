@@ -16,7 +16,7 @@
 } */
 
 #mainleft {
-	border: 1px solid #000;
+	border: 0px solid #000;
 	padding: 15px;
 }
 
@@ -33,8 +33,7 @@
 
 .clock-form {
 	border-radius: 10px;
-	background-color: ;
-	border: 5px solid black;
+	border: 5px solid #353535;
 	text-align: center;
 	height: 200px;
 }
@@ -56,7 +55,7 @@
 
 .board-table {
 	border: 3px solid #47c9af;
-	width: 100%;
+	width: 50%;
 }
 
 th {
@@ -67,8 +66,8 @@ table.greenTable {
   font-family: Georgia, serif;
   border: 6px solid #24943A;
   background-color: #D4EED1;
-  width: 100%;
   text-align: center;
+  width : 50%;
 }
 table.greenTable td, table.greenTable th {
   border: 1px solid #24943A;
