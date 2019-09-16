@@ -53,7 +53,7 @@ body {
     <div id='cssmenu'>
 	<ul>
    <li><a href='#'>Home</a></li>
-   <li><a href='./main.jsp'>Products</a></li>
+   <li><a href='./main.jsp'>메뉴1</a></li>
    <li><a href='#'>Company</a></li>
    <li><a href='#'>Contact</a></li>
 	</ul>
