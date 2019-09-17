@@ -37,9 +37,12 @@ li {
     <div id='cssmenu'>
 	<ul>
    <li><a href='./main2.jsp'>Home</a></li>
-   <li><a href='./main.jsp'>메뉴</a></li>
-   <li><a href='#'>Company</a></li>
-   <li><a href='#'>Contact</a></li>
+   <li><a href='#'>My page</a></li>
+   <li><a href='./main.jsp'>주소록</a></li>
+   <li><a href='#'>게시판</a></li>
+   <li><a href='#'>전자결재</a></li>
+   <li><a href='#'>프로젝트</a></li>
+   <li><a href='#'>캘린더</a></li>
 	</ul>
 	</div>
 	
