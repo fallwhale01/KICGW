@@ -20,12 +20,13 @@ body {
 	padding-top: 20px;
 }
 
-#footer {
+footer {
 	position:fixed;
 	bottom:0;
 	width: 95.5%;
 	height:70px;   
-	background:#ccc;
+	background:#47c9af;
+	opacity: 0.5;
 }
 li {
 	width: 200px;
@@ -36,7 +37,7 @@ li {
     <div id="header"></div>
     <div id='cssmenu'>
 	<ul>
-   <li><a href='./main2.jsp'>Home</a></li>
+   <li class="home"><a href='./main2.jsp'>Home</a></li>
    <li><a href='#'>My page</a></li>
    <li><a href='./main.jsp'>주소록</a></li>
    <li><a href='#'>게시판</a></li>
@@ -46,5 +47,5 @@ li {
 	</ul>
 	</div>
 	
-    <div id="footer">footer</div>
+    <footer>footer1</footer>
 
