@@ -15,6 +15,7 @@
 	left: 0;
 } */
 .row {
+
 	margin-top: 40px;
 	margin-right: 10px;
 	margin-bottom: 100px;
