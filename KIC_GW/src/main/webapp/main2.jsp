@@ -15,6 +15,7 @@
 	left: 0;
 } */
 
+
 #mainleft {
 	border: 1px solid #000;
 	padding: 15px;
@@ -179,6 +180,7 @@ table.greenTable tfoot .links a{
 </script>
 </head>
 <body>
+
 	<div id="wrapper">
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
@@ -248,5 +250,6 @@ table.greenTable tfoot .links a{
 		</div>
 	</div>
 	<script src="./resources/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
