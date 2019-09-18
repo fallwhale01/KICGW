@@ -10,10 +10,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>메인페이지</title>
 <style type="text/css">
-/* #aside {
-	position: absolute;
-	left: 0;
-} */
 .row {
 
 	margin-top: 40px;
