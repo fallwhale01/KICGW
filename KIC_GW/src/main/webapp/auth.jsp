@@ -107,6 +107,7 @@ table.greenTable tfoot .links a{
   color: #24943A;
   padding: 2px 8px;
   border-radius: 5px;
+  
 }
 </style>
 
