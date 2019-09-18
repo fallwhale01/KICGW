@@ -16,10 +16,11 @@
 } */
 .row {
 
-	margin-top: 40px;
-	margin-right: 10px;
-	margin-bottom: 100px;
+   margin-top: 40px;
+   margin-right: 10px;
+   margin-bottom: 100px;
 }
+
 #mainleft {
 	padding: 15px;
 }
@@ -149,6 +150,7 @@ background-color:#fff;      }
 </script>
 </head>
 <body>
+
 	<div id="wrapper">
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
@@ -232,5 +234,6 @@ background-color:#fff;      }
 		</div>
 	</div>
 	<script src="./resources/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
