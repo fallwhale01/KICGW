@@ -122,7 +122,7 @@ table.greenTable tfoot .links a{
 			    var temp_el = $(this).next('ul');
 			    var depth_3 = $('.depth_3');
 
-			    // 처음에 모두 슬라이드 업 시켜준다.
+			    // 처음에 모두 슬라이드 업 시켜준다
 			    depth_3.slideUp(300);
 			    // 클릭한 순간 모두 on(-)을 제거한다.// +가 나오도록
 			    depth_3.parent().find('em').removeClass('on');
