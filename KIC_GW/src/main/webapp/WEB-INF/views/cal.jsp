@@ -5,13 +5,21 @@
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	Calendar today = Calendar.getInstance();
 
-	int year = today.get(Calendar.YEAR);
-	int month = today.get(Calendar.MONTH)+1;
-	
+	int year = 0;
+	int month = 0;
+
+	if (request.getParameter("year")==null || "".equals(request.getParameter("year"))) {
+		year = today.get(Calendar.YEAR);
+		month = today.get(Calendar.MONTH)+1;
+	} else {
+		year = Integer.parseInt(request.getParameter("year"));
+		month = Integer.parseInt(request.getParameter("month"))+1;
+	}
+
 	int START_DAY_OF_WEEK = 0;
 	int END_DAY_OF_WEEK = 0;
 	int END_DAY = 0;
@@ -35,13 +43,6 @@
 	
 	System.out.println( "      " + year + "년 " + month + "월" );
 	System.out.println( " SU MO TU WE TH FR SA" );
-	result.append("<table>");
-	result.append("<tr>");
-	result.append("<td><a style='color: black;' href='#'>&lt;</a></td>");
-	result.append("<td style='background-color: #47c9af;'>" + year + "년 " + month + "월</td>");
-	result.append("<td><a style='color: black;' href='#'>&gt;</a></td>");
-	result.append("</tr>");
-	result.append("</table>");
 	result.append("<table>");
 	result.append("<tr>");
 	result.append("<td style='background-color: tomato;'>일</td>");
@@ -98,7 +99,7 @@
 <title>켈린더 페이지</title>
 <script>
 function fn_formSubmit(){
-	document.form1.submit();	
+	document.form1.submit();
 }
 </script>
 <style type="text/css">
@@ -200,7 +201,7 @@ table.greenTable tfoot .links a{
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
+		<%@include file="../../asdqwe.jsp"%>
 		<div id="container">
 			<div class="row">
 				<div id="mainleft" class="col-sm-2">
@@ -212,6 +213,13 @@ table.greenTable tfoot .links a{
 						<div class="col-sm-2"></div>
 						<div class="col-sm-8">
 							<h2>캘린더</h2>
+							<table>
+							<tr>
+								<td><a style='color: black;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month-1}"/>'>&lt;</a></td>
+								<td style='background-color: #47c9af;'><c:out value="${searchVO.year}"/>년 <c:out value="${searchVO.month}"/>월</td>
+								<td><a style='color: black;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month+1}"/>'>&gt;</a></td>
+							</tr>
+							</table>
 							<%=result %>
 						</div>
 						<div class="col-sm-2"></div>
