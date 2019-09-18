@@ -143,7 +143,7 @@ table.greenTable tfoot .links a{
 
 @keyframes stack3 {
 	0% {width:0; color: rgba(255,255,255,0);}
-	50% {color: rgba(255,255,255,1);}
+	40% {color: rgba(255,255,255,1);}
 	100% {width:25%;}
 }
 	
