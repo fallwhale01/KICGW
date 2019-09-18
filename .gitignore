@@ -1,0 +1,10 @@
+/.metadata/ 
+Servers/ 
+RemoteSystemsTempFiles/ 
+KIC_GW/bin/ 
+KIC_GW/.project 
+KIC_GW/target/ 
+.recommenders/ 
+KIC_GW/.settings/org.eclipse.core.resources.prefs
+KIC_GW/target/m2e-wtp/web-resources/META-INF/maven/com.kic/groupware/pom.properties
+KIC_GW/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF

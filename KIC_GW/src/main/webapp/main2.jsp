@@ -14,7 +14,6 @@
 	position: absolute;
 	left: 0;
 } */
-
 .row {
 
    margin-top: 40px;
@@ -23,7 +22,6 @@
 }
 
 #mainleft {
-	border: 1px solid #000;
 	padding: 15px;
 }
 
@@ -60,70 +58,36 @@
 	font-size: 35px;
 }
 
-.board-table {
-	border: 3px solid #47c9af;
-	width: 50%;
-}
-
+table {
+font-family: "Lato","sans-serif";
+font-size: 18px;
+width: 100% }       /* added custom font-family  */
+ 
+table.one {                                  
+margin-bottom: 3em; 
+border-collapse:collapse;   }   
+ 
+td {                            /* removed the border from the table data rows  */
+text-align: center;     
+width: 10em;                    
+padding: 3px;       }       
+ 
 th {
-	background-color: #47c9af;
+text-align: center;                 
+padding: 1em;
+background-color: #47c9af;
+opacity: 0.5;
+color: white;
 }
-
-table.greenTable {
-  font-family: Georgia, serif;
-  border: 6px solid #24943A;
-  background-color: #D4EED1;
-  text-align: center;
-  width : 50%;
-}
-table.greenTable td, table.greenTable th {
-  border: 1px solid #24943A;
-  padding: 3px 2px;
-}
-table.greenTable tbody td {
-  font-size: 13px;
-}
-table.greenTable thead {
-  background: #24943A;
-  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  border-bottom: 0px solid #444444;
-}
-table.greenTable thead th {
-  font-size: 19px;
-  font-weight: bold;
-  color: #F0F0F0;
-  text-align: left;
-  border-left: 2px solid #24943A;
-}
-table.greenTable thead th:first-child {
-  border-left: none;
-}
-
-table.greenTable tfoot {
-  font-size: 13px;
-  font-weight: bold;
-  color: #F0F0F0;
-  background: #24943A;
-  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  border-top: 1px solid #24943A;
-}
-table.greenTable tfoot td {
-  font-size: 13px;
-}
-table.greenTable tfoot .links {
-  text-align: right;
-}
-table.greenTable tfoot .links a{
-  display: inline-block;
-  background: #FFFFFF;
-  color: #24943A;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
+ 
+tr {    
+height:     }
+ 
+table tr:nth-child(even) {            /* added all even rows a #eee color  */
+    background-color: #eee;     }
+ 
+table tr:nth-child(odd) {            /* added all odd rows a #fff color  */
+background-color:#fff;      }
 </style>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
@@ -200,7 +164,7 @@ table.greenTable tfoot .links a{
 				</div>
 			</div>
 
-			<div id="mainleft" class="col-sm-4">
+			<div id="mainleft" class="col-sm-3">
 				<!-- 공지사항 -->
 				<div class="board">
 					<h3>공지사항</h3>
@@ -220,25 +184,39 @@ table.greenTable tfoot .links a{
 								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
 								<td class="date">작성일</td>
 							</tr>
-							
+							<tr>
+								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
+								<td class="date">작성일</td>
+							</tr>
+							<tr>
+								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
+								<td class="date">작성일</td>
+							</tr>
+							<tr>
+								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
+								<td class="date">작성일</td>
+							</tr>
+							<tr>
+								<td class="title"><a href="#">제목</a> 아이콘 + 조회수</td>
+								<td class="date">작성일</td>
+							</tr>
 						</tbody>
 					</table>
 					<a href="#" class="more"><img
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
 				</div>
 
-				<div class="sign" style="padding-top: 100px;">
-				<h3>결재문서</h3>
+				<div class="sign" style="padding-top: 60px;">
+				
 					<table class="greenTable">
 						<thead>
 							<tr>
-								<th colspan="4">결재대기 문서</th>
-								<th>작성일</th>
+								<th colspan="5">결재대기 문서</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td colspan="5" class="count" style="color:green; font-size: 20px">0</td>
+								<td colspan="5" class="count" style="color:black; font-size: 40px; font-weight: bold;">0</td>
 							</tr>
 						</tbody>
 					</table>
@@ -246,10 +224,10 @@ table.greenTable tfoot .links a{
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
 				</div>
 			</div>
-			<div class="col-sm-4" style="border: 1px solid black;">
+			<div class="col-sm-5">
 			<h3>캘린더</h3>
 			</div>
-			<div class="col-sm-2" style="border: 1px solid black;">
+			<div class="col-sm-2">
 			<h3>채팅목록</h3>
 			</div>
 			</div>
