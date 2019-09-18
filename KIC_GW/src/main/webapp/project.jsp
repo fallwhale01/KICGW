@@ -17,7 +17,7 @@
 
 
 #mainleft {
-	border: 1px solid #fff;
+	border: 1px solid #000;
 	padding: 15px;
 }
 
