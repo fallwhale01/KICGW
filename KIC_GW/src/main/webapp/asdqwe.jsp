@@ -22,15 +22,15 @@ body {
 
 footer {
 	position:fixed;
+	left:0;
 	bottom:0;
-	width: 95.5%;
-	height:70px;   
-	background:#47c9af;
-	opacity: 0.5;
+	width: 100%;
+	height:100px;   
+	background:#49505a;
+	z-index: 1;
 }
 li {
 	width: 200px;
-	text-align: center;
 }
 </style>
 
