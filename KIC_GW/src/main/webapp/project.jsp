@@ -143,7 +143,7 @@ table.greenTable tfoot .links a{
 
 @keyframes stack3 {
 	0% {width:0; color: rgba(255,255,255,0);}
-	40% {color: rgba(255,255,255,1);}
+	50% {color: rgba(255,255,255,1);}
 	100% {width:25%;}
 }
 	
@@ -225,21 +225,27 @@ table.greenTable tfoot .links a{
 
 			<div id="mainleft" class="col-sm-9">
 			
-
+			<table >
+				<tr >
 				total
 				<div class='graph stack1'>
 					<span style="width:75%";>75%</span>
 				</div>
+				</tr>
+				<tr>
 				ing
 				<div class='graph stack2'>
 					<span style="width:60%";>60%</span>
 				</div>
+				</tr>
+				<tr>
 				ed
 				<div class='graph stack3'>
 					<span style="width:25%";>25%</span>
 				</div>
-				
-
+				</tr>
+			</table>
+			
 			<div class="sign" style="padding-top: 100px;">
 				<h3>전체 프로젝트</h3>
 					<table class="greenTable">
@@ -256,8 +262,8 @@ table.greenTable tfoot .links a{
 						</tbody>
 					</table>
 				</div>
-
-			<div class="sign" style="padding-top: 50px;">
+				
+					<div class="sign" style="padding-top: 50px;">
 				<h3>완료 된 프로젝트</h3>
 					<table class="greenTable">
 						<thead>
@@ -273,7 +279,6 @@ table.greenTable tfoot .links a{
 						</tbody>
 					</table>
 			</div>
-
 				
 			</div>
 		</div>
