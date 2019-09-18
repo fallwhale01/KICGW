@@ -22,12 +22,12 @@ public class SchCtr {
     /**
      * 리스트.
      */
-    @RequestMapping(value = "/schList")
+    @RequestMapping(value = "/cal.do")
     public String schList(HttpServletRequest request, MonthTO searchVO, ModelMap modelMap) {
         if (searchVO.getYear()==null || "".equals(searchVO.getYear())) {
         	Calendar today = Calendar.getInstance();
         	searchVO.setYear(Integer.toString(today.get(Calendar.YEAR)));
-        	searchVO.setMonth(Integer.toString(today.get(Calendar.MONTH)));
+        	searchVO.setMonth(Integer.toString(today.get(Calendar.MONTH)+1));
         } else if ("13".equals(searchVO.getMonth())) {
         	int year = Integer.parseInt(searchVO.getYear()) + 1;
         	searchVO.setYear(Integer.toString(year));
@@ -37,29 +37,6 @@ public class SchCtr {
         	searchVO.setYear(Integer.toString(year));
         	searchVO.setMonth("12");
         }
-        int year = Integer.parseInt(searchVO.getYear());
-    	int month = Integer.parseInt(searchVO.getMonth());
-    	
-    	int START_DAY_OF_WEEK = 0;
-    	int END_DAY_OF_WEEK = 0;
-    	int END_DAY = 0;
-    	
-    	Calendar sDay = Calendar.getInstance();
-    	Calendar eDay = Calendar.getInstance();
-    	
-    	sDay.set( year, month-1, 1 );
-    	eDay.set( year, month, 1-1 );
-    	
-    	// 1일의 요일
-    	START_DAY_OF_WEEK = sDay.get( Calendar.DAY_OF_WEEK );
-    	
-    	// 마지막 날의 요일
-    	END_DAY_OF_WEEK = eDay.get( Calendar.DAY_OF_WEEK );
-    	
-    	// 마지막날
-    	END_DAY = eDay.get( Calendar.DATE );
-    	
-        Integer dayofweek = START_DAY_OF_WEEK;
 
         modelMap.addAttribute("searchVO", searchVO);
         
