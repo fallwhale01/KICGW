@@ -17,7 +17,7 @@
 		month = today.get(Calendar.MONTH)+1;
 	} else {
 		year = Integer.parseInt(request.getParameter("year"));
-		month = Integer.parseInt(request.getParameter("month"))+1;
+		month = Integer.parseInt(request.getParameter("month"));
 	}
 
 	int START_DAY_OF_WEEK = 0;
@@ -41,10 +41,7 @@
 	// 마지막날
 	END_DAY = eDay.get( Calendar.DATE );
 	
-	System.out.println( "      " + year + "년 " + month + "월" );
-	System.out.println( " SU MO TU WE TH FR SA" );
 	result.append("<table>");
-	result.append("<tr>");
 	result.append("<td style='background-color: tomato;'>일</td>");
 	result.append("<td>월</td>");
 	result.append("<td>화</td>");
@@ -56,12 +53,10 @@
 	result.append("<tr>");
 	// 1일 이전의 공백(요일)
 	for( int i=1 ; i<START_DAY_OF_WEEK ; i++ ) {
-		System.out.print( "   " );
 		result.append("<td></td>");
 	}
 	// 1일 부터 마지막 날까지 출력
 	for( int i=1, n=START_DAY_OF_WEEK ; i<=END_DAY ; i++, n++ ) {
-		System.out.print( ( i < 10 ) ? "  " + i : " " + i );
 		if(n% 7 == 1){
 			result.append("<td><a style='color: red;' href='#" + year + month + i + "'>" + i + "</a><br />");
 		} else if(n% 7 == 0) {
@@ -69,12 +64,15 @@
 		} else {
 			result.append("<td><a style='color: black;' href='#" + year + month + i + "'>" + i + "</a><br />");
 		}
-		result.append("회사일정<br />");
-		result.append("부서별일정<br />");
-		result.append("개인일정</td>");
+		result.append("회사일정");
+		result.append("<br />");
+		result.append("부서별일정");
+		result.append("<br />");
+		result.append("개인일정");
+		result.append("</td>");
+		
 		// 토요일 마다 엔터키
 		if( n% 7 == 0 ) {
-			System.out.println();
 			result.append("</tr>");
 			result.append("<tr>");
 		}
@@ -82,7 +80,6 @@
 	
 	// 마지막 날부터 공백
 	for( int i=END_DAY_OF_WEEK ; i <=6 ; i++ ) {
-		System.out.print( "   " );
 		result.append("<td></td>");
 	}
 	result.append("</tr>");
@@ -97,11 +94,6 @@
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>켈린더 페이지</title>
-<script>
-function fn_formSubmit(){
-	document.form1.submit();
-}
-</script>
 <style type="text/css">
 #mainleft {
 	border: 1px solid #000;
@@ -125,7 +117,7 @@ table, td {border: 1px solid black; height: 50px; text-align: center;}
 	text-align: center;
 	padding: 30px;
 	border-radius: 5px;
-	font-weight: bold
+	font-weight: bold;
 }
 
 .board-table {
@@ -210,19 +202,12 @@ table.greenTable tfoot .links a{
 				<div id="cal" class="col-sm-10">
 					<div id="container" style="padding-top: 0">
 					<div class="row">
-						<div class="col-sm-2"></div>
+						<div class="col-sm-2"><a style='color: black; left: 40%; top: 300px; position: absolute;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month-1}"/>'><img src="./resources/img/3.png" style="width: 50px; opacity: 0.5"></a></div>
 						<div class="col-sm-8">
-							<h2>캘린더</h2>
-							<table>
-							<tr>
-								<td><a style='color: black;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month-1}"/>'>&lt;</a></td>
-								<td style='background-color: #47c9af;'><c:out value="${searchVO.year}"/>년 <c:out value="${searchVO.month}"/>월</td>
-								<td><a style='color: black;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month+1}"/>'>&gt;</a></td>
-							</tr>
-							</table>
+							<h2><c:out value="${searchVO.year}"/>년 <c:out value="${searchVO.month}"/>월</h2>
 							<%=result %>
 						</div>
-						<div class="col-sm-2"></div>
+						<div class="col-sm-2"><a style='color: black; right: 40%; top: 300px; position: absolute;' href='./cal.do?year=<c:out value="${searchVO.year}"/>&month=<c:out value="${searchVO.month+1}"/>'><img src="./resources/img/4.png" style="width: 50px; opacity: 0.5"></a></div>
 					</div>
 					</div>
 				</div>
