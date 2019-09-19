@@ -13,84 +13,49 @@
 <style type="text/css">
 
 </style>
-<link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
-<script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
-
-
 <script type="text/javascript">
-$(document).ready(function() {
-    $("#date1,#date2").datepicker();
-});
 
 </script>
 </head>
 <body>
-
-	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
-	<div id="container">
-		<div class="row">
-			<%@include file="./menu.jsp" %>
-
-			<div id="mainleft" class="col-sm-10">
-			
-				<form>
-					<fieldset>
-					<legend>Create Project</legend>
-					<ol>
-  					<li>
-   						<label for="userid">Project Name</label>
-   						| <input id="project_name" name="project_name" type="text">
-  					</li>
-  					<li>
-   						<label for="pwd1">start ~ end</label>
-  						| <input id="date1" name="start" type="text"  >
-  						~
-  						<input id="date2" name="end" type="text">
-  					</li>
-  					<li>
-  						<label pwd="level">프로젝트 메니저</label>
-  						| <input id="project_manager" name="project_manager" type="text">
-  					</li>
-  					<li>
-  						<label pwd="level">프로젝트 부서</label>
-  						| <input id="project_dept" name="project_dept" type="text" readonly>
-  					</li>
-  					<li>
-  						<label pwd="fullname">프로젝트 참여자</label>
-  						| <select name="project_emp">
-   							 <option value="">참여자 선택</option>
-    						 <option value="emp1">emp1</option>
-    						 <option value="emp2">emp2</option>
-   						     <option value="emp3">emp3</option>
-						  </select>
-  					</li>
-  					<li>
-  						<label pwd="fullname">프로젝트 내용</label>
-  						| <input class="content" id="project_content" name="project_contetn" type="text" >
-  					</li>
-					</ol>
-					</fieldset>
-
+<h3>진행중 PROJECT</h3>
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>no.</th>
+			<th>Project 명</th>
+			<th>Project 기간</th>
+			<th>Project 담당자</th>
+			<th>Project 상태</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>1</td>
+		<td>부트스트랩 사용 게시판</td>
+		<td>2019.10.01~2019.10.11</td>
+		<td>최원구</td>
+		<td>진행중</td>
+	</tr>
 	
-					<fieldset>
-					<legend>프로젝트 단계(계획, 디자인, 코딩)</legend>
-					<ol>
-  					<li>
-    					<input id="skill" name="skill" type="range" min="1" max="3" step="1">
-  					</li>  
-					</ol>
-					</fieldset>
+	<tr>
+		<td>2</td>
+		<td>HTML 사용 게시판</td>
+		<td>2019.10.01~2019.10.11</td>
+		<td>최원구</td>
+		<td>진행중</td>
+	</tr>
+	
+	<tr>
+		<td>3</td>
+		<td>JAVA 사용 게시판</td>
+		<td>2019.10.01~2019.10.11</td>
+		<td>최원구</td>
+		<td>진행중</td>
+	</tr>
+	</tbody>
+</table>
 
-					<fieldset>
-  					<button type="submit"> 생성 </button> 
-					</fieldset>
-				</form>
-				
-			</div>
-		</div>
-	</div>
-	</div>
+<script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
