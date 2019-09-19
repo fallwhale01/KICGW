@@ -16,12 +16,9 @@
 	left: 0;
 } */
 
-#mainleft {
-	padding: 30px;
-}
-
 .row {
 	padding-top: 30px;
+	padding-left: 20px;
 	width: 1300px;
 	height: 500px;
 }
@@ -109,6 +106,7 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
   
 }
+tr:nth-child(even){background-color: #f2f2f2}
 </style>
 
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
@@ -159,6 +157,7 @@ table.greenTable tfoot .links a{
 					<table class="board-table">
 						<thead>
 							<tr>
+								<th scope="col" class="check"></th>
 								<th scope="col" class="seq">번호</th>
 								<th scope="col" class="title">제목</th>
 								<th scope="col" class="date">작성일</th>
@@ -168,6 +167,7 @@ table.greenTable tfoot .links a{
 						</thead>
 						<tbody>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">1</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -175,6 +175,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">2</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -182,6 +183,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">3</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -189,6 +191,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">4</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -196,6 +199,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">5</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -203,6 +207,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">6</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -210,6 +215,7 @@ table.greenTable tfoot .links a{
 								<td class="state">결재완료</td>
 							</tr>
 							<tr>
+								<td><input type="checkbox" /></td>
 								<td class="seq">7</td>
 								<td class="title">제목</td>
 								<td class="date">작성일</td>
@@ -218,12 +224,14 @@ table.greenTable tfoot .links a{
 							</tr>
 						</tbody>
 					</table>
+					
 				</div>
 
 			</div>
+			
 			</div>
+			<input class="btn btn-outline-info" type="button" value="버튼" style="float:right; margin-right: 250px">
 		</div>
 	</div>
-	<script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
