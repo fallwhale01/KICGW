@@ -10,16 +10,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <title>프로젝트 메인</title>
 <style type="text/css">
-/* #aside {
-	position: absolute;
-	left: 0;
-} */
-
-
-#mainleft {
-	border: 1px solid #000;
-	padding: 15px;
-}
+tr:nth-child(even){background-color: #f2f2f2}
 
 th {
 	background-color: #47c9af;
@@ -85,7 +76,6 @@ table.greenTable tfoot .links a{
 	border: 1px solid #000;
 	padding: 15px;
 }
-
 
 form {
 	-moz-border-radius: 5px;
@@ -243,8 +233,22 @@ form button:hover {
 </script>
 </head>
 <body>
-<!--include file="./project_main.jsp" %> -->
-<%@include file="./project_create.jsp" %>
+
+<div id="wrapper">
+		<%@include file="./asdqwe.jsp"%>
+	<div id="container">
+		<div class="row">
+			<%@include file="./menu.jsp" %>
+
+			<div id="mainleft" class="col-sm-9">
+			
+			<%@include file="./project_main.jsp"%>
+				
+			</div>
+		</div>
+	</div>
+	</div>
+<script src="./resources/js/bootstrap.bundle.min.js"></script>
 	
 </body>
 </html>
