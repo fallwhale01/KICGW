@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<title>메인페이지</title>
+<title>프로젝트 메인</title>
 <style type="text/css">
 /* #aside {
 	position: absolute;
@@ -19,44 +19,6 @@
 #mainleft {
 	border: 1px solid #000;
 	padding: 15px;
-}
-
-.timeInput {
-	font-family: 나눔고딕, NanumGothic;
-	font-size: 4em;
-	border: 1 #fff;
-	color: #684816;
-	text-align: center;
-	padding: 30px;
-	border-radius: 5px;
-	font-weight: bold
-}
-
-.clock-form {
-	border-radius: 10px;
-	border: 5px solid #353535;
-	text-align: center;
-	height: 200px;
-}
-
-.checkin {
-	/* 버튼 디자인  */
-	
-}
-
-.checkout {
-	/* 버튼 디자인  */
-}
-
-#clock {
-	padding-top: 15px;
-	color: black;
-	font-size: 35px;
-}
-
-.board-table {
-	border: 3px solid #47c9af;
-	width: 50%;
 }
 
 th {
@@ -119,6 +81,130 @@ table.greenTable tfoot .links a{
   border-radius: 5px;
 }
 
+#mainleft {
+	border: 1px solid #000;
+	padding: 15px;
+}
+
+
+form {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	counter-reset: fieldsets;
+	padding: 20px;
+	width: 1200px;	
+}
+
+		
+form fieldset {
+	border: none;
+	margin-bottom: 10px;
+}
+		
+form fieldset:last-of-type {
+	margin-bottom: 0;
+}
+			
+form legend {
+	color: #384313;
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	text-shadow: 0 1px 1px #c0d576;
+}
+				
+	
+form fieldset fieldset legend {
+	color: #111111;
+	font-size: 13px;
+	font-weight: normal;
+	padding-bottom: 0;
+}
+			
+form ol li {
+	background: #47c9af;
+	opacity:0.7;
+	border-color: #e3ebc3;
+	border-color: rgba(255,255,255,.6);
+	border-style: solid;
+	border-width: 2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	line-height: 30px;
+	width : 1300px;
+	list-style: none;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+}
+							
+form ol ol li {
+	background: none;
+	border: none;
+	float: left;
+}
+			
+form label {
+	float: left;
+	font-size: 13px;
+	width: 300px;
+}
+
+form select {
+	width: 300px;
+}								
+					
+form fieldset fieldset label:hover {
+	cursor: pointer;
+}
+				
+form input:not([type=radio]) {
+	background: #ffffff;
+	border: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	font: italic 13px 맑은고딕,굴림,돋움;
+	outline: none;
+	padding: 5px;
+
+}
+
+form input.content{
+	width : 900px;
+	height : 280px;
+}
+					
+form input:not([type=submit]):focus, {
+	background: #eaeaea;
+}
+					
+				
+form button {
+	background: #384313;
+	border: none;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 20px;
+	color: #ffffff;
+	display: block;
+	font: 16px 맑은고딕,굴림,돋움;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+	text-shadow: 0 1px 1px #000000;
+	text-transform: uppercase;
+}
+					
+form button:hover {
+	background: #1e2506;
+	cursor: pointer;
+}
 
 .graph{height: 40px; margin:0 0 15px; background:#ccc; border-radius:40px;}
 .graph span {display:block; padding:0 10px; height:40px; line-height:40px;
@@ -148,143 +234,17 @@ table.greenTable tfoot .links a{
 }
 	
 </style>
+<link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
+<script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		printClock();
-		/* 출근하기 눌렀을때 초까지 저장??? */
-		$('.checkin').on('click', function() {
-			var str = printClock();
-			console.log(str);
-		});
 
-		/* 퇴근하기 눌렀을 때 */
-		$('.checkout').on('click', function() {
-			var str = printClock();
-			console.log(str);
-		});
-		
-		$('.count').animateNumber({
-			number: 8
-		});
-	});
-	function printClock() {
-
-		var week = [ '일', '월', '화', '수', '목', '금', '토' ];
-		var clock = document.getElementById("clock"); // 출력할 장소 선택
-		var currentDate = new Date(); // 현재시간
-		var calendar = currentDate.getFullYear() + "-"
-				+ (currentDate.getMonth() + 1) + "-" + currentDate.getDate() // 현재 날짜
-		var currentHours = addZeros(currentDate.getHours(), 2);
-		var currentMinute = addZeros(currentDate.getMinutes(), 2);
-		var currentSecond = addZeros(currentDate.getSeconds(), 2);
-		var currentSeconds = addZeros(currentDate.getSeconds(), 2);
-
-		if (currentSeconds >= 0) {		// 50초 이상일 때 색을 변환해 준다.
-			currentSeconds = '<span style="color:grey;">' + currentSeconds
-					+ '</span>'
-		}
-		// 요일 출력 구문 
-		var dayWeek = week[currentDate.getDay()];
-		clock.innerHTML = "<span style='font-size: 30px'>" + calendar + ' (' +dayWeek + ') '
-				+ "</span><br />" + currentHours + ":" + currentMinute + ":"
-				+ currentSeconds; //날짜를 출력해 줌
-
-		setTimeout("printClock()", 1000); // 1초마다 printClock() 함수 호출
-
-		return currentHours + ":" + currentMinute + ":" + currentSecond;
-	}
-
-	function addZeros(num, digit) { // 자릿수 맞춰주기
-		var zero = '';
-		num = num.toString();
-		if (num.length < digit) {
-			for (i = 0; i < digit - num.length; i++) {
-				zero += '0';
-			}
-		}
-		return zero + num;
-	}
 </script>
 </head>
 <body>
-
-	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
-	<div id="container">
-		<div class="row">
-			<div id="aside" class="col-sm-2">
-				<!-- 출결 체크박스 -->
-				<div class="clock-form">
-					<div id="clock"></div><br />
-					<button class="btn btn-outline-dark checkin">출근하기</button>&nbsp;&nbsp;&nbsp;
-					<button class="btn btn-outline-dark checkout">퇴근하기</button>
-				</div>
-			</div>
-
-			<div id="mainleft" class="col-sm-9">
-			
-			<table >
-				<tr >
-				total
-				<div class='graph stack1'>
-					<span style="width:75%";>75%</span>
-				</div>
-				</tr>
-				<tr>
-				ing
-				<div class='graph stack2'>
-					<span style="width:60%";>60%</span>
-				</div>
-				</tr>
-				<tr>
-				ed
-				<div class='graph stack3'>
-					<span style="width:25%";>25%</span>
-				</div>
-				</tr>
-			</table>
-			
-			<div class="sign" style="padding-top: 100px;">
-				<h3>전체 프로젝트</h3>
-					<table class="greenTable">
-						<thead>
-							<tr>
-								<th colspan="4">결재대기 문서</th>
-								<th>작성일</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td colspan="5" class="count" style="color:tomato; font-size: 20px">0</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				
-					<div class="sign" style="padding-top: 50px;">
-				<h3>완료 된 프로젝트</h3>
-					<table class="greenTable">
-						<thead>
-							<tr>
-								<th colspan="4">결재대기 문서</th>
-								<th>작성일</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td colspan="5" class="count" style="color:tomato; font-size: 20px">0</td>
-							</tr>
-						</tbody>
-					</table>
-			</div>
-				
-			</div>
-		</div>
-	</div>
-	<script src="./resources/js/bootstrap.bundle.min.js"></script>
+<!--include file="./project_main.jsp" %> -->
+<%@include file="./project_create.jsp" %>
 	
-		
 </body>
 </html>
