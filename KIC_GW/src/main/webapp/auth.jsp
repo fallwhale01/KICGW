@@ -151,62 +151,7 @@ table.greenTable tfoot .links a{
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
 		<div class="row">
-			<div class="tree_box">
-		    <div class="con">
-		        <ul id="tree_menu" class="tree_menu">
-		            <li class="depth_1"><strong>프로젝트 목록</strong>
-		            </li>
-		            <li class="depth_1"><strong>진행중인 프로젝트</strong>
-		                <ul class="depth_2">
-		                    <li>
-		                        <a href="#none"><em>폴더</em> 프로젝트 1</a>
-		                        <ul class="depth_3">
-		                            <li><a href="#none">최신정보가져오기</a></li>
-		                            <li><a href="#none">수납내역조회</a></li>
-		                            <li><a href="#none">사납내역거래처확인</a></li>
-		                            <li><a href="#none">수납내역 거래처확인결과</a></li>
-		                            <li><a href="#none">매출채권관리</a></li>
-		                        </ul>
-		                    </li>
-		                    <li class="last">
-		                        <a href="#none"><em>폴더</em> 프로젝트 2</a>
-		                        <ul class="depth_3">
-		                            <li><a href="#none">최신정보가져오기</a></li>
-		                            <li><a href="#none">수납내역조회</a></li>
-		                            <li><a href="#none">사납내역거래처확인</a></li>
-		                            <li><a href="#none">수납내역 거래처확인결과</a></li>
-		                            <li class="end"><a href="#none">매출채권관리</a></li>
-		                        </ul>
-		                    </li>
-		                </ul>
-		            </li>
-		            <li class="depth_1"><strong>완료된 프로젝트</strong>
-		               <ul class="depth_2">
-		                    <li>
-		                        <a href="#none"><em>폴더</em> 프로젝트 1</a>
-		                        <ul class="depth_3">
-		                            <li><a href="#none">최신정보가져오기</a></li>
-		                            <li><a href="#none">수납내역조회</a></li>
-		                            <li><a href="#none">사납내역거래처확인</a></li>
-		                            <li><a href="#none">수납내역 거래처확인결과</a></li>
-		                            <li><a href="#none">매출채권관리</a></li>
-		                        </ul>
-		                    </li>
-		                    <li class="last">
-		                        <a href="#none"><em>폴더</em> 프로젝트 2</a>
-		                        <ul class="depth_3">
-		                            <li><a href="#none">최신정보가져오기</a></li>
-		                            <li><a href="#none">수납내역조회</a></li>
-		                            <li><a href="#none">사납내역거래처확인</a></li>
-		                            <li><a href="#none">수납내역 거래처확인결과</a></li>
-		                            <li class="end"><a href="#none">매출채권관리</a></li>
-		                        </ul>
-		                    </li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </div>
-			</div>
+			<%@include file="./menu.jsp" %>
 
 			<div id="mainleft" class="col-sm-7">
 				<!-- 전자결재 -->
