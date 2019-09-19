@@ -11,13 +11,17 @@
 
 	int year = 0;
 	int month = 0;
-
+	
 	if (request.getParameter("year")==null || "".equals(request.getParameter("year"))) {
 		year = today.get(Calendar.YEAR);
 		month = today.get(Calendar.MONTH)+1;
 	} else {
 		year = Integer.parseInt(request.getParameter("year"));
 		month = Integer.parseInt(request.getParameter("month"));
+	}
+	String monthStr = Integer.toString(month);
+	if(month <= 9) {
+		monthStr = "0" + Integer.toString(month);
 	}
 
 	int START_DAY_OF_WEEK = 0;
@@ -57,13 +61,24 @@
 	}
 	// 1일 부터 마지막 날까지 출력
 	for( int i=1, n=START_DAY_OF_WEEK ; i<=END_DAY ; i++, n++ ) {
-		if(n% 7 == 1){
-			result.append("<td><a style='color: red;' href='#" + year + month + i + "'>" + i + "</a><br />");
-		} else if(n% 7 == 0) {
-			result.append("<td><a style='color: blue;' href='#" + year + month + i + "'>" + i + "</a><br />");
+		if(i <= 9) {
+			if(n% 7 == 1){
+				result.append("<td><a style='color: red;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
+			} else if(n% 7 == 0) {
+				result.append("<td><a style='color: blue;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
+			} else {
+				result.append("<td><a style='color: black;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
+			}
 		} else {
-			result.append("<td><a style='color: black;' href='#" + year + month + i + "'>" + i + "</a><br />");
+			if(n% 7 == 1){
+				result.append("<td><a style='color: red;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
+			} else if(n% 7 == 0) {
+				result.append("<td><a style='color: blue;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
+			} else {
+				result.append("<td><a style='color: black;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
+			}
 		}
+		
 		result.append("회사일정");
 		result.append("<br />");
 		result.append("부서별일정");

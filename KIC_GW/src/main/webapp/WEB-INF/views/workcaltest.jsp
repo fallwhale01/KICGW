@@ -191,7 +191,7 @@ function fn_formSubmit(){
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
+		<%@include file="../../asdqwe.jsp"%>
 		<div id="container">
 			<div class="row">
 				<div id="mainleft" class="col-sm-2">
@@ -230,10 +230,10 @@ function fn_formSubmit(){
 									<div class="row form-group">
 										<label class="col-lg-2">일시</label>
 										<div class="col-lg-2">
-										<input class="form-control" size="16" id="startdate" name="startdate" value="<c:if test='${work != null and calno == null}'>${work}</c:if><c:if test='${calno != null}'><c:out value="${caldata.calstartdate}"/></c:if>" readonly>
+										<input class="form-control" size="16" id="startdate" name="startdate" value="<c:if test='${searchVO.date != null and calno == null}'>${searchVO.date}</c:if><c:if test='${calno != null}'><c:out value="${caldata.calstartdate}"/></c:if>" readonly>
 										</div>
 										<div class="col-lg-2">
-										<input class="form-control" size="16" id="enddate" name="enddate" value="<c:out value="${caldata.calenddate}"/>" readonly>
+										<input class="form-control" size="16" id="enddate" name="enddate" value="<c:if test='${searchVO.date != null and calno == null}'>${searchVO.date}</c:if><c:if test='${calno != null}'><c:out value="${caldata.calenddate}"/></c:if>" readonly>
 										</div>
 										<div class="col-sm-2"></div>
 									</div>
