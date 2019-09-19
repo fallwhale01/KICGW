@@ -42,4 +42,11 @@ public class SchCtr {
         
         return "cal";
     }
+    
+    @RequestMapping(value = "/work.do")
+    public String workcaltest(HttpServletRequest request, MonthTO searchVO, ModelMap modelMap) {
+    	searchVO.setDate(request.getParameter("work"));
+    	modelMap.addAttribute("searchVO", searchVO);
+        return "workcaltest";
+    }
 }

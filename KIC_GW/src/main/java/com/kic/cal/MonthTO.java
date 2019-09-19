@@ -4,8 +4,17 @@ public class MonthTO {
 
 	private String  year, 
 					month;
+	private String date;
 
-    public String getYear() {
+    public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getYear() {
 		return year;
 	}
 
