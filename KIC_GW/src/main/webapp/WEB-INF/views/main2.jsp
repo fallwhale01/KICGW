@@ -111,7 +111,6 @@ background-color:#fff;      }
 				}
 			});
 		} // end of checkin
-		
 		var checkout = function( date ) {
 			
 			$.ajax({

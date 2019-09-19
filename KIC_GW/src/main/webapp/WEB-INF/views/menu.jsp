@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
   <link rel="stylesheet" href="./resources/menu.css">
    <script type="text/javascript">
+   
    	$(document).ready( function() {
    		$('#menu li.active').addClass('open').children('ul').show();
    		$('#menu li.has-sub>a').on('click', function(){

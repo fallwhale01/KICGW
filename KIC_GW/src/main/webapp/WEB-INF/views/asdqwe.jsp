@@ -3,7 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./resources/styles.css">
 <style type="text/css">
-
 body {
 	margin: 0;
 	margin-left: 40px;

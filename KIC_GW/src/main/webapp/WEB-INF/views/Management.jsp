@@ -112,6 +112,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 						out.println("<td class='date"+ i +"'>" + year + "-" + months + "-" + "0" + i + "</td>");
 				}else {
 					out.println("<td class='date"+ i +"'>" + year + "-" + months + "-" + i + "</td>");
+					
 				}
 				out.println("<td class='checkin"+ i +"'></td>");
 				out.println("<td class='checkout"+ i +"'></td>");
