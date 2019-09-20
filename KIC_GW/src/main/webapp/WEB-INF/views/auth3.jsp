@@ -9,7 +9,9 @@
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/tree.css">
-<title>전자결재 페이지</title>
+<link rel="stylesheet" href="./resources/styles.css">
+<link rel="stylesheet" href="./resources/menu.css">
+<title>전자결재 페이지(출장신청서)</title>
 <style type="text/css">
 /* #aside {
 	position: absolute;
@@ -20,7 +22,7 @@
 	padding-top: 30px;
 	padding-left: 20px;
 	width: 1300px;
-	height: 500px;
+	height: 800px;
 }
 
 .checkin {
@@ -39,7 +41,6 @@
 
 table{
 	text-align: center; 
-	height: 400px;
 }
 
 th {
@@ -107,6 +108,83 @@ table.greenTable tfoot .links a{
   
 }
 tr:nth-child(even){background-color: #f2f2f2}
+a {
+  color: #4f4f4f;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+}
+.button:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+body {
+	margin: 0;
+	margin-left: 40px;
+	margin-right: 40px;
+	height:100%;
+}
+
+#header {
+	height:70px;
+}
+
+#container {
+	margin-right: 0px;
+	padding-top: 20px;
+}
+
+
+li {
+	width: 200px;
+}
+
 </style>
 
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
@@ -146,92 +224,37 @@ tr:nth-child(even){background-color: #f2f2f2}
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
+		<div id="header"></div>
+	    <div id='cssmenu'>
+			<ul>
+			   <li class="home"><a href='./main2.do'>Home</a></li>
+			   <li><a href='./Management.do'>My page</a></li>
+			   <li><a href='./main.do'>주소록</a></li>
+			   <li><a href='#'>게시판</a></li>
+			   <li><a href='./auth.do'>전자결재</a></li>
+			   <li><a href='./project.do'>프로젝트</a></li>
+			   <li><a href='./cal.do'>캘린더</a></li>
+			</ul>
+		</div>
 		<div id="container">
 		<div class="row">
-			<%@include file="./menu.jsp" %>
-
+		<div class="menubar col-sm-3">
+			<div id='menu'>
+			<ul>
+			   <li onclick="javascript: location.href='./auth.do'"><a>결재목록</a></li>
+			   <li onclick="javascript: location.href='./auth2.do'"><a>휴가신청서</a></li>
+			   <li onclick="javascript: location.href='./auth3.do'"><a>출장신청서</a></li>
+			   <li onclick="javascript: location.href='./auth4.do'"><a>교통비신청서</a></li>
+			</ul>
+			</div>
+			</div>
 			<div id="mainleft" class="col-sm-7">
-				<!-- 전자결재 -->
-				<div class="board">
-					<table class="board-table">
-						<thead>
-							<tr>
-								<th scope="col" class="check"></th>
-								<th scope="col" class="seq">번호</th>
-								<th scope="col" class="title">제목</th>
-								<th scope="col" class="date">작성일</th>
-								<th scope="col" class="kind">결재종류</th>
-								<th scope="col" class="state">결재상태</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">1</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">2</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">3</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">4</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">5</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">6</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-								<td class="seq">7</td>
-								<td class="title">제목</td>
-								<td class="date">작성일</td>
-								<td class="kind">결재종류</td>
-								<td class="state">결재완료</td>
-							</tr>
-						</tbody>
-					</table>
-					
-				</div>
-
+				<%@include file="./busitrip.html" %>
 			</div>
-			
-			</div>
-			<input class="btn btn-outline-info" type="button" value="버튼" style="float:right; margin-right: 250px">
+		</div>
+		<a href="#" class="button" style="margin-bottom:100px;margin-right:0px;float:right;text-decoration:none">신청</a>
 		</div>
 	</div>
+	<script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

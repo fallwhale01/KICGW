@@ -9,7 +9,9 @@
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="./resources/tree.css">
-<title>전자결재 페이지(출장신청서)</title>
+<link rel="stylesheet" href="./resources/styles.css">
+<link rel="stylesheet" href="./resources/menu.css">
+<title>전자결재 페이지(휴가신청서)</title>
 <style type="text/css">
 /* #aside {
 	position: absolute;
@@ -20,7 +22,7 @@
 	padding-top: 30px;
 	padding-left: 20px;
 	width: 1300px;
-	height: 800px;
+	height: 700px;
 }
 
 .checkin {
@@ -106,6 +108,7 @@ table.greenTable tfoot .links a{
   
 }
 tr:nth-child(even){background-color: #f2f2f2}
+
 a {
   color: #4f4f4f;
 }
@@ -161,6 +164,27 @@ a {
   background-color: #39bda7;
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
+
+body {
+	margin: 0;
+	margin-left: 40px;
+	margin-right: 40px;
+	height:100%;
+}
+
+#header {
+	height:70px;
+}
+
+#container {
+	margin-right: 0px;
+	padding-top: 20px;
+}
+
+
+li {
+	width: 200px;
+}
 </style>
 
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
@@ -200,15 +224,36 @@ a {
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="./asdqwe.jsp"%>
+			 <div id="header"></div>
+    <div id='cssmenu'>
+	<ul>
+	    <li class="home"><a href='./main2.do'>Home</a></li>
+	    <li><a href='./Management.do'>My page</a></li>
+	    <li><a href='./main.do'>주소록</a></li>
+	    <li><a href='#'>게시판</a></li>
+	    <li><a href='./auth.do'>전자결재</a></li>
+	    <li><a href='./project.do'>프로젝트</a></li>
+		<li><a href='./cal.do'>캘린더</a></li>
+	</ul>
+	</div>
+
 		<div id="container">
 		<div class="row">
-			<%@include file="./menu.jsp" %>
+		<div class="menubar col-sm-3">
+				<div id='menu'>
+				<ul>
+				   <li onclick="javascript: location.href='./auth.do'"><a>결재목록</a></li>
+				   <li onclick="javascript: location.href='./auth2.do'"><a>휴가신청서</a></li>
+				   <li onclick="javascript: location.href='./auth3.do'"><a>출장신청서</a></li>
+				   <li onclick="javascript: location.href='./auth4.do'"><a>교통비신청서</a></li>
+				</ul>
+				</div>
+				</div>
 			<div id="mainleft" class="col-sm-7">
-				<%@include file="./busitrip.html" %>
+				<%@include file="./vacation.html" %>
 			</div>
 		</div>
-		<a href="#" class="button" style="margin-bottom:100px;margin-right:100px;float:right;text-decoration:none">신청</a>
+		<a href="#" class="button" style="margin-bottom:50px;margin-right:350px;float:right;text-decoration:none">신청</a>
 		</div>
 	</div>
 	<script src="./resources/js/bootstrap.bundle.min.js"></script>
