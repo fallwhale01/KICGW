@@ -77,124 +77,6 @@ table.greenTable tfoot .links a{
 	padding: 15px;
 }
 
-form {
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	border-radius: 5px;
-	counter-reset: fieldsets;
-	padding: 20px;
-	width: 1200px;	
-}
-
-		
-form fieldset {
-	border: none;
-	margin-bottom: 10px;
-}
-		
-form fieldset:last-of-type {
-	margin-bottom: 0;
-}
-			
-form legend {
-	color: #384313;
-	font-size: 16px;
-	font-weight: bold;
-	padding-bottom: 10px;
-	text-shadow: 0 1px 1px #c0d576;
-}
-				
-	
-form fieldset fieldset legend {
-	color: #111111;
-	font-size: 13px;
-	font-weight: normal;
-	padding-bottom: 0;
-}
-			
-form ol li {
-	background: #47c9af;
-	opacity:0.7;
-	border-color: #e3ebc3;
-	border-color: rgba(255,255,255,.6);
-	border-style: solid;
-	border-width: 2px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-khtml-border-radius: 5px;
-	border-radius: 5px;
-	line-height: 30px;
-	width : 1300px;
-	list-style: none;
-	padding: 5px 10px;
-	margin-bottom: 2px;
-}
-							
-form ol ol li {
-	background: none;
-	border: none;
-	float: left;
-}
-			
-form label {
-	float: left;
-	font-size: 13px;
-	width: 300px;
-}
-
-form select {
-	width: 300px;
-}								
-					
-form fieldset fieldset label:hover {
-	cursor: pointer;
-}
-				
-form input:not([type=radio]) {
-	background: #ffffff;
-	border: none;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	-khtml-border-radius: 3px;
-	border-radius: 3px;
-	font: italic 13px 맑은고딕,굴림,돋움;
-	outline: none;
-	padding: 5px;
-
-}
-
-form input.content{
-	width : 900px;
-	height : 280px;
-}
-					
-form input:not([type=submit]):focus, {
-	background: #eaeaea;
-}
-					
-				
-form button {
-	background: #384313;
-	border: none;
-	-moz-border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-khtml-border-radius: 20px;
-	border-radius: 20px;
-	color: #ffffff;
-	display: block;
-	font: 16px 맑은고딕,굴림,돋움;
-	letter-spacing: 1px;
-	margin: auto;
-	padding: 7px 25px;
-	text-shadow: 0 1px 1px #000000;
-	text-transform: uppercase;
-}
-					
-form button:hover {
-	background: #1e2506;
-	cursor: pointer;
-}
 
 .graph{height: 40px; margin:0 0 15px; background:#ccc; border-radius:40px;}
 .graph span {display:block; padding:0 10px; height:40px; line-height:40px;
@@ -222,7 +104,7 @@ form button:hover {
 	50% {color: rgba(255,255,255,1);}
 	100% {width:25%;}
 }
-	
+
 </style>
 <link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
 <script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
@@ -242,7 +124,7 @@ form button:hover {
 
 			<div id="mainleft" class="col-sm-9">
 			
-			<%@include file="./project_main.jsp"%>
+			<%@include file="./project_create.jsp"%>
 				
 			</div>
 		</div>

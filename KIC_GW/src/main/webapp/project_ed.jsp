@@ -12,7 +12,6 @@
 <title>프로젝트 생성</title>
 <style type="text/css">
 
-
 </style>
 
 <link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
@@ -38,7 +37,7 @@
 	<tbody>
 	<tr>
 		<td>1</td>
-		<td>부트스트랩 사용 게시판</td>
+		<td><a href="%">부트스트랩 사용 게시판</a></td>
 		<td>2019.10.01~2019.10.11</td>
 		<td>최원구</td>
 		<td>진행중</td>
