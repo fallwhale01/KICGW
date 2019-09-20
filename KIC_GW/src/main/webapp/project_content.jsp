@@ -51,9 +51,9 @@
 			
 </div>
 <div class="table">
-	<div class="align_right">
-		<button type="button" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_modify1.jsp'">수정</button>
-		<button type="button" class="btn_list btn_txt02" style="cursor: pointer;" onclick="location.href='board_delete1.jsp'">삭제</button>
+	<div align="right">
+		<a href="#" class="button" style="text-decoration:none">수정</a>
+		<a href="#" class="button" style="text-decoration:none">삭제</a>
 	</div>		
 </div>
 <script src="./resources/js/bootstrap.bundle.min.js"></script>
