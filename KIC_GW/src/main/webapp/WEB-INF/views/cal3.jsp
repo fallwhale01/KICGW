@@ -55,28 +55,6 @@ body {
     background-color: green; /* background color */
     border-color: green;     /* border color */
 }
-.brue,
-.brue div,
-.brue span,
-.brue a {
-    background-color: brue; /* background color */
-    border-color: brue;     /* border color */
-}
-.yellow,
-.yellow div,
-.yellow span,
-.yellow a {
-    background-color: yellow; /* background color */
-    border-color: yellow;     /* border color */
-    color: black;
-}
-.red,
-.red div,
-.red span,
-.red a {
-    background-color: red; /* background color */
-    border-color: red;     /* border color */
-}
 .orange,
 .orange div,
 .orange span,
@@ -90,13 +68,6 @@ body {
 .purple a {
     background-color: purple; /* background color */
     border-color: purple;     /* border color */
-}
-.maroon,
-.maroon div,
-.maroon span,
-.maroon a {
-    background-color: maroon; /* background color */
-    border-color: maroon;     /* border color */
 }
 </style>
 <script type='text/javascript'>
