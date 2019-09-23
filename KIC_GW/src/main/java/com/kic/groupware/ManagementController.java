@@ -64,4 +64,55 @@ public class ManagementController {
 		return model;
 	}
 	
+	
+	@RequestMapping(value = "/project.do")
+	public ModelAndView project( HttpServletRequest request, HttpServletResponse response) {
+		System.out.println( "project 컨트롤러 호출" );
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName( "project" );
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/project_ing.do")
+	public ModelAndView project_ing( HttpServletRequest request, HttpServletResponse response) {
+		System.out.println( "project_ing 컨트롤러 호출" );
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName( "project_ing" );
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/project_ed.do")
+	public ModelAndView project_ed( HttpServletRequest request, HttpServletResponse response) {
+		System.out.println( "project_ed 컨트롤러 호출" );
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName( "project_ed" );
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/project_create.do")
+	public ModelAndView project_create( HttpServletRequest request, HttpServletResponse response) {
+		System.out.println( "project_create 컨트롤러 호출" );
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName( "project_create" );
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/project_content.do")
+	public ModelAndView project_content( HttpServletRequest request, HttpServletResponse response) {
+		System.out.println( "project_content 컨트롤러 호출" );
+		
+		ModelAndView model = new ModelAndView();
+		model.setViewName( "project_content" );
+		
+		return model;
+	}
+	
 }

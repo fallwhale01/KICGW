@@ -3,7 +3,9 @@
 <%
     String contentPage=request.getParameter("contentPage");
     if(contentPage==null)
-        contentPage="project_create.jsp";
+        contentPage="project_main.jsp";
+    else
+    	contentPage="project_create.jsp";
 %>
 
 <!DOCTYPE html>
@@ -184,11 +186,12 @@ a {
 		<%@include file="./asdqwe.jsp"%>
 	<div id="container">
 		<div class="row">
+			<div class="menubar col-sm-3">
 			<%@include file="./project_menu.jsp" %>
-
-			<div id="mainleft" class="col-sm-9">
+			</div>
+			<div id="mainleft" class="col-sm-8">
 			
-			<%@include file="./project_create.jsp" %>
+			<jsp:include page="<%=contentPage%>" />
 							
 			</div>
 		</div>
