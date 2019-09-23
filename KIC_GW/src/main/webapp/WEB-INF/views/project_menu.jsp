@@ -52,6 +52,5 @@
          <li><a href='project_ed.do' onclick="changeView(3)">완성된 Project</a></li>
       </ul>
    </li>
-   <li><a href='#'>About</a></li>
 </ul>
 </div>
