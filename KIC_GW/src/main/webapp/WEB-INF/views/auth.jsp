@@ -205,11 +205,11 @@ li {
 					<tbody>
 					<tr>
 						<td>1</td>
-						<td>휴가에 대한 건</td>
+						<td onClick="location.href='./auth5.do'">휴가에 대한 건</td>
 						<td>2019.10.01</td>
 						<td>휴가</td>
 						<td>마승호</td>
-						<td>진행중</td>
+						<td>결재대기중</td>
 					</tr>
 					
 					<tr>
@@ -227,7 +227,7 @@ li {
 						<td>2019.10.01</td>
 						<td>출장</td>
 						<td>박문수</td>
-						<td>진행중</td>
+						<td>결재대기중</td>
 					</tr>
 					</tbody>
 				</table>
