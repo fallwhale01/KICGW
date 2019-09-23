@@ -8,12 +8,30 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
 <title>메인페이지</title>
 <style type="text/css">
 /* #aside {
 	position: absolute;
 	left: 0;
 } */
+.checkin-time {
+	margin-top: 10px;
+}
+.checkout-time {
+	
+}
+.checkin-time, .checkout-time {
+	font-family: "Nanum Gothic", sans-serif;
+}
+.checkin {
+	margin-left: 25px;
+}
+.checkin, .checkout {
+	margin-top: 10px;
+	text-align: center;
+}
+
 .row {
 
 	margin-top: 40px;
@@ -24,28 +42,18 @@
 	padding: 15px;
 }
 
-.timeInput {
-	font-family: 나눔고딕, NanumGothic;
-	font-size: 4em;
-	border: 1 #fff;
-	color: #684816;
-	text-align: center;
-	padding: 30px;
-	border-radius: 5px;
-	font-weight: bold
-}
-
 .clock-form {
+	padding-top: 5px;
 	border-radius: 10px;
 	border: 5px solid #353535;
 	text-align: center;
-	height: 200px;
+	height: 130px;
 }
 
 #clock {
-	padding-top: 15px;
 	color: black;
-	font-size: 35px;
+	font-family: "Lato", "sans-serif";
+	font-size: 50px;
 }
 
 table {
@@ -78,6 +86,13 @@ table tr:nth-child(even) {            /* added all even rows a #eee color  */
  
 table tr:nth-child(odd) {            /* added all odd rows a #fff color  */
 background-color:#fff;      }
+
+.checkbox {
+	margin-bottom: 10px;
+}
+.calday {
+	margin-bottom:0;
+}
 </style>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
@@ -86,13 +101,53 @@ background-color:#fff;      }
 		// 현재 시각 출력 함수호출
 		printClock();
 		
-		var checkin = function( date ) {
-			
+		var check = 0;
+		
+		var checkinout = function( eno ) {
+			$.ajax({
+				url: './checkinout.do',
+				type: 'get',
+				data: {
+					eno: eno
+				},
+				dataType: 'JSON',
+				success: function( json ) {
+					results = json.results;
+					$.each( results, function() {
+						var checkin = this.checkin;
+						var checkout = this.checkout;
+						
+						if( checkin == '' || checkin == null ) {
+							$('.checkin').prop( 'disabled', false );
+						}else {
+							var intime = checkin.split(' ');
+							$( '.checkin-time').html( '출근시간 : ' + intime[1] );
+							$('.checkin').val('출근완료').prop( 'disabled', true );
+						}
+						
+						if( checkout == '' || checkout == null ) {
+							$('.checkout').prop( 'disabled', false );
+						}else {
+							var outtime = checkout.split(' ');
+							$( '.checkout-time').html( '퇴근시간 : ' + outtime[1] );
+							$('.checkout').val('퇴근완료').prop( 'disabled', true );
+						}
+						
+						
+					});
+				}
+			});
+		} // end of checkinout
+		
+		// 출근, 퇴근 시간 출력
+		
+		
+		var checkin = function( indate ) {
 			$.ajax({
 				url: './checkin.do',
 				type: 'get',
 				data: {
-					date: date
+					date: indate
 				},
 				dataType: 'JSON',
 				success: function( json ) {
@@ -101,6 +156,9 @@ background-color:#fff;      }
 						var flag = this.flag;
 						if( flag == 0 ) {
 							alert('출근되었습니다.');
+							var intime = indate.split(' ');
+							$( '.checkin-time').html( '출근시간 : ' + intime[1] );
+							$('.checkin').val('출근완료').prop( 'disabled', true );
 						}else {
 							alert('출근하기에 실패하였습니다.');
 						}
@@ -111,13 +169,13 @@ background-color:#fff;      }
 				}
 			});
 		} // end of checkin
-		var checkout = function( date ) {
+		var checkout = function( outdate ) {
 			
 			$.ajax({
 				url: './checkout.do',
 				type: 'get',
 				data: {
-					date: date
+					date: outdate
 				},
 				dataType: 'JSON',
 				success: function( json ) {
@@ -126,6 +184,9 @@ background-color:#fff;      }
 						var flag = this.flag;
 						if( flag == 0 ) {
 							alert('퇴근되었습니다.');
+							var outtime = outdate.split(' ');
+							$( '.checkout-time').html( '퇴근시간 : ' + outtime[1] );
+							$('.checkout').val('퇴근완료').prop( 'disabled', true );
 						}else {
 							alert('퇴근하기에 실패하였습니다.');
 						}
@@ -136,23 +197,28 @@ background-color:#fff;      }
 				}
 			});
 		} // end of checkout
-		
+		var indate = '';
 		/* 출근하기 눌렀을때 초까지 저장 */
 		$('.checkin').on('click', function() {
 			// 출근 시간
-			var date = printClock();
-			checkin( date );
+			indate = printClock();
+			console.log( indate );
+			checkin( indate );
+			
 		});
-
+		var outdate = '';
 		/* 퇴근하기 눌렀을 때 */
 		$('.checkout').on('click', function() {
-			var date = printClock();
-			checkout( date );
+				outdate = printClock();
+				checkout( outdate );
 		});
+		
 		
 		$('.count').animateNumber({
 			number: 8
 		});
+		
+		checkinout("1");
 	});
 	function printClock() {
 
@@ -172,13 +238,13 @@ background-color:#fff;      }
 		}
 		// 요일 출력 구문 
 		var dayWeek = week[currentDate.getDay()];
-		clock.innerHTML = "<span style='font-size: 30px'>" + calendar + ' (' +dayWeek + ') '
-				+ "</span><br />" + currentHours + ":" + currentMinute + ":"
+		clock.innerHTML = "<div class='calday' style='font-size: 20px'>" + calendar + ' (' +dayWeek + ') '
+				+ "</div>" + currentHours + ":" + currentMinute + ":"
 				+ currentSeconds; //날짜를 출력해 줌
 
 		setTimeout("printClock()", 1000); // 1초마다 printClock() 함수 호출
 
-		return currentHours + ":" + currentMinute + ":" + currentSecond;
+		return calendar + " " + currentHours + ":" + currentMinute + ":" + currentSecond;
 	}
 
 	function addZeros(num, digit) { // 자릿수 맞춰주기
@@ -191,6 +257,14 @@ background-color:#fff;      }
 		}
 		return zero + num;
 	}
+	
+	// 페이지 새로고침
+	 if (self.name != 'reload') {
+         self.name = 'reload';
+         self.location.reload(true);
+     }
+     else self.name = ''; 
+	
 </script>
 </head>
 <body>
@@ -200,9 +274,14 @@ background-color:#fff;      }
 		<div class="row">
 			<div id="aside" class="col-sm-2">
 				<!-- 출결 체크박스 -->
+				<div class="checkbox"><img alt="check" src="./resources/img/check.png" width="20" /> 근태관리</div>
 				<div class="clock-form">
-					<div id="clock"></div><br />
-					<button class="btn btn-outline-dark checkin">출근하기</button>&nbsp;&nbsp;&nbsp;
+					<div id="clock"></div>
+				</div>
+				<div>
+					<div class="checkin-time">출근시간 : 미확인</div>
+					<div class="checkout-time">퇴근시간 : 미확인</div>
+					<button class="btn btn-outline-dark checkin">출근하기</button>&nbsp;&nbsp;
 					<button class="btn btn-outline-dark checkout">퇴근하기</button>
 				</div>
 			</div>
@@ -267,7 +346,7 @@ background-color:#fff;      }
 						src="http://img.echosting.cafe24.com/skin/base_ko_KR/board/btn_board_more.gif" alt="더보기" /></a>
 				</div>
 			</div>
-			<div class="col-sm-5">
+			<div class="col-sm-4">
 			<h3>캘린더</h3>
 			</div>
 			<div class="col-sm-2">

@@ -9,6 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="main2.do">메인이동</a>
+<jsp:forward page="main2.do"></jsp:forward>
 </body>
 </html>
