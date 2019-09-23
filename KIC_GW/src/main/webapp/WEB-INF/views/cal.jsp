@@ -1,5 +1,5 @@
 <%@ page import="java.util.Calendar"%>
-<%@ page import="com.kic.cal.MonthTO"%>
+<%@ page import="com.kic.groupware.model1.calendar.MonthTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
@@ -61,29 +61,24 @@
 	}
 	// 1일 부터 마지막 날까지 출력
 	for( int i=1, n=START_DAY_OF_WEEK ; i<=END_DAY ; i++, n++ ) {
-		if(i <= 9) {
-			if(n% 7 == 1){
-				result.append("<td><a style='color: red;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
-			} else if(n% 7 == 0) {
-				result.append("<td><a style='color: blue;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
-			} else {
-				result.append("<td><a style='color: black;' href='./work.do?work=" + year + "-" + monthStr + "-0" + i + "'>" + i + "</a><br />");
-			}
+		if(n% 7 == 1){
+			result.append("<td><table><tr><td style='height: 0px; border-collapse: collapse; border: none;'><a style='color: red;' href='./calone.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a></td></tr>");
+		} else if(n% 7 == 0) {
+			result.append("<td><table><tr><td style='height: 0px; border-collapse: collapse; border: none;'><a style='color: blue;' href='./calone.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a></td></tr>");
 		} else {
-			if(n% 7 == 1){
-				result.append("<td><a style='color: red;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
-			} else if(n% 7 == 0) {
-				result.append("<td><a style='color: blue;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
-			} else {
-				result.append("<td><a style='color: black;' href='./work.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a><br />");
-			}
+			result.append("<td><table><tr><td style='height: 0px; border-collapse: collapse; border: none;'><a style='color: black;' href='./calone.do?work=" + year + "-" + monthStr + "-" + i + "'>" + i + "</a></td></tr>");
 		}
-		
+		result.append("<tr><td style='height: 0px; border-collapse: collapse; border: none;'>");
+		result.append("<div style='position:relative'>");
 		result.append("회사일정");
-		result.append("<br />");
+		result.append("</div></td></tr>");
+		result.append("<tr><td style='height: 0px; border-collapse: collapse; border: none;'>");
 		result.append("부서별일정");
-		result.append("<br />");
+		result.append("</td></tr>");
+		result.append("<tr><td style='height: 0px; border-collapse: collapse; border: none;'>");
 		result.append("개인일정");
+		result.append("</td></tr>");
+		result.append("</table>");
 		result.append("</td>");
 		
 		// 토요일 마다 엔터키
@@ -116,13 +111,12 @@
 }
 
 #cal {
-	border: 1px solid #000;
 	padding: 15px;
 	text-align: center;
 }
 
-table { width: 800px; border-collapse: collapse;}
-table, td {border: 1px solid black; height: 50px; text-align: center;}
+table { width: 100%; border-collapse: collapse;}
+td {border: 1px solid black; height: 50px; text-align: center;}
 
 .timeInput {
 	font-family: 나눔고딕, NanumGothic;
@@ -208,12 +202,12 @@ table.greenTable tfoot .links a{
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="../../asdqwe.jsp"%>
+		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
 			<div class="row">
-				<div id="mainleft" class="col-sm-2">
+				<div class="col-sm-2">
+					<%@include file="../../calmenu.jsp"%>
 				</div>
-	
 				<div id="cal" class="col-sm-10">
 					<div id="container" style="padding-top: 0">
 					<div class="row">
