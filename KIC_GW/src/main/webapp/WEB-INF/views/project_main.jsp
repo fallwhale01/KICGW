@@ -11,8 +11,6 @@
 
 <title>프로젝트 생성</title>
 <style type="text/css">
-
-
 </style>
 
 <link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
@@ -20,7 +18,6 @@
 <script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
 
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -46,7 +43,7 @@
 			</table>
 			
 				<div class="sign" style="padding-top: 100px;">
-				<h3>전체 프로젝트</h3>
+				<h3><a href="project_ed.do">완료 된 프로젝트</a></h3>
 					<table class="greenTable">
 						<thead>
 							<tr>
@@ -63,7 +60,7 @@
 				</div>
 				
 				<div class="sign" style="padding-top: 50px;">
-				<h3>완료 된 프로젝트</h3>
+				<h3>진행 중 프로젝트</h3>
 					<table class="greenTable">
 						<thead>
 							<tr>
@@ -81,6 +78,3 @@
 <script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-		
-		

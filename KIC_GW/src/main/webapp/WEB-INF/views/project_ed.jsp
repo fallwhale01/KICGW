@@ -11,7 +11,6 @@
 
 <title>프로젝트 생성</title>
 <style type="text/css">
-
 </style>
 
 <link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
@@ -19,12 +18,20 @@
 <script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
 
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
-<h3>완료된 PROJECT</h3>
-<table class="table table-hover">
+
+<div id="wrapper">
+		<%@include file="./asdqwe.jsp"%>
+	<div id="container">
+		<div class="row">
+			<div class="menubar col-sm-3">
+			<%@include file="./project_menu.jsp" %>
+			</div>
+			<div id="mainleft" class="col-sm-8">
+			<h3>완료된 PROJECT</h3>
+			<table class="table table-hover">
 	<thead>
 		<tr>
 			<th>no.</th>
@@ -37,7 +44,7 @@
 	<tbody>
 	<tr>
 		<td>1</td>
-		<td><a href="%">부트스트랩 사용 게시판</a></td>
+		<td><a href="project_content.do">부트스트랩 사용 게시판</a></td>
 		<td>2019.10.01~2019.10.11</td>
 		<td>최원구</td>
 		<td>진행중</td>
@@ -117,6 +124,7 @@
 	</tbody>
 </table>
 <hr/>
+<center>
 <div class="container"  style="display: inline-block;">
 	<div class="paginate_regular" style="text-align: center;">
 		<div class="board_pagetab">
@@ -130,6 +138,14 @@
 		</div>
 	</div>
 </div>
+</center>
+							
+			</div>
+		</div>
+	</div>
+</div>
+
+
 <script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
