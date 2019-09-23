@@ -29,13 +29,13 @@ li {
     <div id="header"></div>
     <div id='cssmenu'>
 	<ul>
-   <li class="home"><a href='./main2.jsp'>Home</a></li>
-   <li><a href='./Management.jsp'>My page</a></li>
-   <li><a href='./main.jsp'>주소록</a></li>
+   <li class="home"><a onClick="location.replace='./main2.do'">Home</a></li>
+   <li><a href='./Management.do'>My page</a></li>
+   <li><a href='./main.do'>주소록</a></li>
    <li><a href='#'>게시판</a></li>
    <li><a href='#'>전자결재</a></li>
    <li><a href='#'>프로젝트</a></li>
-   <li><a href='#'>캘린더</a></li>
+   <li><a href='./cal.do'>캘린더</a></li>
 	</ul>
 	</div>
 	

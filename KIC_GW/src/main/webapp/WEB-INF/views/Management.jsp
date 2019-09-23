@@ -71,9 +71,50 @@ tr:nth-child(even){background-color: #f2f2f2}
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">
 	$(document).ready( function() {
-		var test = $('.date7').text();
-		console.log( test );
+		var manage = function( eno ) {
+			$.ajax({
+				url: './managelist.do',
+				type: 'post',
+				data: {
+					eno: eno
+				},
+				dataType: 'JSON',
+				success: function( json ) {
+					results = json.results;
+					$.each( results, function() {
+						var mdate = this.mdate;
+						var checkins = this.checkin;
+						var checkouts = this.checkout;
+						
+						var checkin = checkins.split(' ');
+						var checkout = '';
+						if( checkouts != null || checkouts != '' ) {
+							checkout = checkouts.split(' ');
+						}else {
+							checkout = '';
+						}
+						
+						
+						for ( var i =1; i<=31; i++ ) {
+							var date = $('.date'+i).text();
+							if( date == mdate ) {
+								$( '.checkin'+i ).html(checkin[1].substring(0,8));
+								$( '.checkout'+i ).html(checkout[1].substring(0,8));
+							}
+						}
+					});
+				}
+			});
+		} //end of manage
+		
+		manage("1");
 	});
+	// 페이지 새로고침
+	 if (self.name != 'reload') {
+        self.name = 'reload';
+        self.location.reload(true);
+    }
+    else self.name = ''; 
 </script>
 </head>
 <body>
@@ -108,11 +149,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 			}
 			for( int i=1; i<=End_day; i++ ) {
 				out.println("<tr>");
-				if( i < 10 ) {
-						out.println("<td class='date"+ i +"'>" + year + "-" + months + "-" + "0" + i + "</td>");
-				}else {
+				if( i< 10 ) {
+					out.println("<td class='date"+ i +"'>" + year + "-" + months + "-0" + i + "</td>");
+				} else {
 					out.println("<td class='date"+ i +"'>" + year + "-" + months + "-" + i + "</td>");
-					
 				}
 				out.println("<td class='checkin"+ i +"'></td>");
 				out.println("<td class='checkout"+ i +"'></td>");

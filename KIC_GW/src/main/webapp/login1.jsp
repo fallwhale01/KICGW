@@ -10,24 +10,26 @@
 	
 	<style type="text/css">
 	.arial {font-family: arial;
-			color : #57b846;
+			z-index: 20;
+			color : #000;
 			font-weight: bold;	
 	}
 	
-	.s3 { text-shadow: 2px 2px 6px gray; }
+	.s3 { text-shadow: 2px 2px 6px black; }
 	
 .box {
 
   border-radius: 5px;
   box-shadow: 0 2px 30px rgba(black, .2);
-  background: lighten(#f0f4c3, 10%);
+  background: lighten(#f0f4c3);
   position: relative;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
 
 .wave {
-  opacity: .4;
+  opacity: 0.3;
+  
   position: absolute;
   top: 3%;
   left: 50%;
