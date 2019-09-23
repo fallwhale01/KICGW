@@ -1,5 +1,5 @@
 <%@ page import="java.util.Calendar"%>
-<%@ page import="com.kic.cal.MonthTO"%>
+<%@ page import="com.kic.groupware.model1.calendar.MonthTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,8 +11,6 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <title>켈린더 일정 관리</title>
 <style type="text/css">
@@ -174,8 +172,7 @@ window.onload = function() {
     });
 }
 function fn_formSubmit(){
-	if ( ! chkInputValue("#caltitle", "일정명")) return false;
-	if ( ! chkInputValue("#calcontents", "내용")) return false;
+	if ( ! chkInputValue("#cdname", "일정명")) return false;
 	if ( ! chkInputValue("#startdate", "날짜")) return false;
 	if ( ! chkInputValue("#enddate", "날짜")) return false;
 	if ( $("#startdate").val() > $("#enddate").val()) {
@@ -191,13 +188,14 @@ function fn_formSubmit(){
 </head>
 <body>
 	<div id="wrapper">
-		<%@include file="../../asdqwe.jsp"%>
+		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
 			<div class="row">
-				<div id="mainleft" class="col-sm-2">
+				<div class="col-sm-2">
+					<%@include file="../../calmenu.jsp"%>
 				</div>
 				<form id="form1" class="col-sm-10" name="form1" role="form" action="./cal.do" method="post" >
-					<input type="hidden" name="calno" value="<c:out value="${caldata.calno}"/>">
+					<input type="hidden" name="cdno" value="<c:out value="${caldata.cdno}"/>">
 					<div id="container" style="padding-top: 0">
 						<div class="row">
 							<div class="col-sm-2"></div>
@@ -206,42 +204,43 @@ function fn_formSubmit(){
 									<div class="row form-group" style="text-align: center;">
 										<div class="col-lg-1"></div>
 										<div class="col-lg-8">
-				                            <h2>개인 일정</h2>
+				                            <h2>회사 일정 추가</h2>
 				                        </div>
 				                        <div class="col-lg-2"></div>
 			                        </div>
 									<div class="row form-group">
 			                            <label class="col-lg-2">일정명</label>
 			                            <div class="col-lg-8">
-			                            	<input type="text" class="form-control" id="caltitle" name="caltitle" maxlength="50" 
-			                            	value="<c:out value="${caldata.caltitle}"/>">
+			                            	<input type="text" class="form-control" id="cdname" name="cdname" maxlength="50" 
+			                            	value="<c:out value="${caldata.cdname}"/>">
 			                            </div>
 			                        </div>
 			                        <div class="row form-group">
 			                            <label class="col-lg-2">구분</label>
 			                            <div class="col-lg-2">
-											<select id="work" name="work" class="form-control">
-												<c:forTokens var="item" items="업무,회의,외근,출장,교육,휴가,기타" delims=",">
-					                           		<option value="${item}" <c:if test='${item==caldata.work}'>selected</c:if>>${item}</option>
+											<select id="cdcolor" name="cdcolor" class="form-control">
+												<c:forTokens var="item" items="초록색,파랑색,노랑색,빨강색,주황색,보라색,갈색" delims=",">
+					                           		<option value="${item}" <c:if test='${item==caldata.cdcolor}'>selected</c:if>>${item}</option>
 											 	</c:forTokens>
 											</select>
 			                            </div>
 			                        </div>
 									<div class="row form-group">
-										<label class="col-lg-2">일시</label>
+										<label class="col-lg-2">일정 날짜</label>
 										<div class="col-lg-2">
-										<input class="form-control" size="16" id="startdate" name="startdate" value="<c:if test='${searchVO.date != null and calno == null}'>${searchVO.date}</c:if><c:if test='${calno != null}'><c:out value="${caldata.calstartdate}"/></c:if>" readonly>
+										<input class="form-control" size="16" id="startdate" name="startdate" value="<c:if test='${searchVO.date != null and caldata.cdno == null}'>${searchVO.date}</c:if><c:if test='${caldata.cdno != null}'><c:out value="${caldata.startdate}"/></c:if>" readonly>
 										</div>
+										<div class="col-sm-1" style="text-align: center;"><p>~</p></div>
 										<div class="col-lg-2">
-										<input class="form-control" size="16" id="enddate" name="enddate" value="<c:if test='${searchVO.date != null and calno == null}'>${searchVO.date}</c:if><c:if test='${calno != null}'><c:out value="${caldata.calenddate}"/></c:if>" readonly>
+										<input class="form-control" size="16" id="enddate" name="enddate" value="<c:if test='${searchVO.date != null and caldata.cdno == null}'>${searchVO.date}</c:if><c:if test='${caldata.cdno != null}'><c:out value="${caldata.enddate}"/></c:if>" readonly>
 										</div>
 										<div class="col-sm-2"></div>
 									</div>
 									<div class="row form-group">
 			                            <label class="col-lg-2">내용</label>
-			                            <div class="col-lg-8">
-			                            	<textarea class="form-control" id="calcontents" name="calcontents" style="resize: none; height: 150px"><c:out value="${caldata.calcontents}"/></textarea>
-			                            </div> 
+			                            	<div class="col-lg-8">
+			                            	<textarea class="form-control" id="contents" name="contents" style="resize: none; height: 150px"><c:out value="${caldata.contents}"/></textarea>
+			                            </div>
 			                        </div>
 			                        <div class="row form-group" style="float: right; margin-right: 138px">
 			                            <a onclick="fn_formSubmit()" class="button" style="text-decoration:none">등록</a>

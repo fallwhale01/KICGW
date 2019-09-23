@@ -11,10 +11,8 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width,initial-scale=1.0,minimun-scale=1.0,maximun-scale=1.0">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<title>개인 일정 관리</title>
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
+<title>켈린더 일정 관리</title>
 <style type="text/css">
 #mainleft {
 	border: 1px solid #000;
@@ -99,24 +97,93 @@ table.greenTable tfoot .links a{
   padding: 2px 8px;
   border-radius: 5px;
 }
+a {
+  color: #4f4f4f;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #4f4f4f;
+  border-radius: 4px;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+}
+.button:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button:after {
+  content: "";
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleY(1) scaleX(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #39bda7;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+.button:hover {
+  color: #ffffff;
+  border: 1px solid #39bda7;
+}
+.button:hover:before {
+  top: -35%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+.button:hover:after {
+  top: -45%;
+  background-color: #39bda7;
+  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
 </style>
 <link href="./resources/css/datepicker.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script src="./resources/js/bootstrap-datepicker.js"></script>
+<script src="./resources/js/project9.js"></script>
 <script type="text/javascript">
 window.onload = function() {
-    $('#ssstartdate').datepicker().on('changeDate', function(ev) {
+    $('#startdate').datepicker().on('changeDate', function(ev) {
         if (ev.viewMode=="days"){
-            $('#ssstartdate').datepicker('hide');
+            $('#startdate').datepicker('hide');
         }
     });
-    $('#ssenddate').datepicker().on('changeDate', function(ev) {
+    $('#enddate').datepicker().on('changeDate', function(ev) {
         if (ev.viewMode=="days"){
-            $('#ssenddate').datepicker('hide');
+            $('#enddate').datepicker('hide');
         }
     });
 }
+function fn_formSubmit(){
+	if ( ! chkInputValue("#cdname", "일정명")) return false;
+	if ( ! chkInputValue("#startdate", "날짜")) return false;
+	if ( ! chkInputValue("#enddate", "날짜")) return false;
+	if ( $("#startdate").val() > $("#enddate").val()) {
+		alert("날짜를 정확하게 입력하세요");
+		return false;
+	}
+	
+	if (!confirm("저장 하시겠습니까?")) return;
+	
+	$("#form1").submit();
+} 
 </script>
 </head>
 <body>
@@ -124,9 +191,11 @@ window.onload = function() {
 		<%@include file="./asdqwe.jsp"%>
 		<div id="container">
 			<div class="row">
-				<div id="mainleft" class="col-sm-2">
+				<div class="col-sm-2">
+					<%@include file="../../calmenu.jsp"%>
 				</div>
-				<form id="form1" class="col-sm-10" name="form1" role="form" action="schSave" method="post" >
+				<form id="form1" class="col-sm-10" name="form1" role="form" action="./cal.do" method="post" >
+					<input type="hidden" name="cdno" value="<c:out value="${caldata.cdno}"/>">
 					<div id="container" style="padding-top: 0">
 						<div class="row">
 							<div class="col-sm-2"></div>
@@ -135,39 +204,47 @@ window.onload = function() {
 									<div class="row form-group" style="text-align: center;">
 										<div class="col-lg-1"></div>
 										<div class="col-lg-8">
-				                            <h2>개인 일정</h2>
+				                            <h2>부서 일정 추가</h2>
 				                        </div>
 				                        <div class="col-lg-2"></div>
 			                        </div>
 									<div class="row form-group">
 			                            <label class="col-lg-2">일정명</label>
 			                            <div class="col-lg-8">
-			                            	<input type="text" class="form-control" id="sstitle" name="sstitle" maxlength="50" 
-			                            	value="<c:out value="${schInfo.sstitle}"/>">
+			                            	<input type="text" class="form-control" id="cdname" name="cdname" maxlength="50" 
+			                            	value="<c:out value="${caldata.cdname}"/>">
 			                            </div>
 			                        </div>
 			                        <div class="row form-group">
 			                            <label class="col-lg-2">구분</label>
 			                            <div class="col-lg-2">
-											<select id="ssendminute" name="ssendminute" class="form-control">
-												<c:forTokens var="item" items="업무,회의,외근,출장,교육,휴가,기타" delims=",">
-					                           		<option value="${item}" <c:if test='${item==schInfo.ssendminute}'>selected</c:if>>${item}</option>
+											<select id="cdcolor" name="cdcolor" class="form-control">
+												<c:forTokens var="item" items="초록색,파랑색,노랑색,빨강색,주황색,보라색,갈색" delims=",">
+					                           		<option value="${item}" <c:if test='${item==caldata.cdcolor}'>selected</c:if>>${item}</option>
 											 	</c:forTokens>
-											</select>	
+											</select>
 			                            </div>
 			                        </div>
 									<div class="row form-group">
-										<label class="col-lg-2">일시</label>
+										<label class="col-lg-2">일정 날짜</label>
 										<div class="col-lg-2">
-										<input class="form-control" size="16" id="ssstartdate" name="ssstartdate" readonly>
+										<input class="form-control" size="16" id="startdate" name="startdate" value="<c:if test='${searchVO.date != null and caldata.cdno == null}'>${searchVO.date}</c:if><c:if test='${caldata.cdno != null}'><c:out value="${caldata.startdate}"/></c:if>" readonly>
+										</div>
+										<div class="col-sm-1" style="text-align: center;"><p>~</p></div>
+										<div class="col-lg-2">
+										<input class="form-control" size="16" id="enddate" name="enddate" value="<c:if test='${searchVO.date != null and caldata.cdno == null}'>${searchVO.date}</c:if><c:if test='${caldata.cdno != null}'><c:out value="${caldata.enddate}"/></c:if>" readonly>
 										</div>
 										<div class="col-sm-2"></div>
 									</div>
 									<div class="row form-group">
 			                            <label class="col-lg-2">내용</label>
-			                            <div class="col-lg-8">
-			                            	<textarea class="form-control" id="sscontents" name="sscontents" style="resize: none; height: 150px"><c:out value="${schInfo.sscontents}"/></textarea>
-			                            </div> 
+			                            	<div class="col-lg-8">
+			                            	<textarea class="form-control" id="contents" name="contents" style="resize: none; height: 150px"><c:out value="${caldata.contents}"/></textarea>
+			                            </div>
+			                        </div>
+			                        <div class="row form-group" style="float: right; margin-right: 138px">
+			                            <a onclick="fn_formSubmit()" class="button" style="text-decoration:none">등록</a>
+			                      		<a href="./cal.do" class="button" style="margin-left:10px; text-decoration:none">취소</a>
 			                        </div>
 								</div>
 							</div>
@@ -178,6 +255,6 @@ window.onload = function() {
 			</div>
 		</div>
 	</div>
-	<script src="./resources/js/bootstrap.bundle.min.js"></script>
+	
 </body>
 </html>
