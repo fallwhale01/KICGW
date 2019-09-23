@@ -11,16 +11,23 @@
 
 <title>프로젝트 생성</title>
 <style type="text/css">
-
 	
 </style>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
-<h3>진행중 PROJECT</h3>
-<table class="table table-hover">
+
+<div id="wrapper">
+		<%@include file="./asdqwe.jsp"%>
+	<div id="container">
+		<div class="row">
+			<div class="menubar col-sm-3">
+			<%@include file="./project_menu.jsp" %>
+			</div>
+			<div id="mainleft" class="col-sm-8">
+			<h3>진행중 PROJECT</h3>
+			<table class="table table-hover">
 	<thead>
 		<tr>
 			<th>no.</th>
@@ -56,6 +63,12 @@
 	</tr>
 	</tbody>
 </table>
+							
+			</div>
+		</div>
+	</div>
+</div>
+
 
 <script src="./resources/js/bootstrap.bundle.min.js"></script>
 </body>

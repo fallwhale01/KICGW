@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+    String contentPage=request.getParameter("contentPage");
+    if(contentPage==null)
+        contentPage="project_main.jsp";
+    else
+    	contentPage="project_create.jsp";
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +19,9 @@
 <title>프로젝트 메인</title>
 <style type="text/css">
 tr:nth-child(even){background-color: #f2f2f2}
-
 th {
 	background-color: #47c9af;
 }
-
 table.greenTable {
   font-family: Georgia, serif;
   border: 6px solid #47c9af;
@@ -47,7 +53,6 @@ table.greenTable thead th {
 table.greenTable thead th:first-child {
   border-left: none;
 }
-
 table.greenTable tfoot {
   font-size: 13px;
   font-weight: bold;
@@ -71,18 +76,14 @@ table.greenTable tfoot .links a{
   padding: 2px 8px;
   border-radius: 5px;
 }
-
 #mainleft {
 	border: 1px solid #000;
 	padding: 15px;
 }
-
-
 .graph{height: 40px; margin:0 0 15px; background:#ccc; border-radius:40px;}
 .graph span {display:block; padding:0 10px; height:40px; line-height:40px;
 			text-align: right;  border-radius:40px;
 			box-sizing:border-box; color: #fff;}
-
 .graph.stack1 span{background:#47c9af; animation:stack 2s 1;}
 .graph.stack2 span{background:tomato; animation:stack2 2s 1;}
 .graph.stack3 span{background:skyblue; animation:stack3 2s 1;}
@@ -90,7 +91,6 @@ table.greenTable tfoot .links a{
 a {
   color: #4f4f4f;
 }
-
 .button {
   display: inline-block;
   padding: 12px 24px;
@@ -150,26 +150,22 @@ a {
 	50% {color: rgba(255,255,255,1);}
 	100% {width:75%;}
 }
-
 @keyframes stack2 {
 	0% {width:0; color: rgba(255,255,255,0);}
 	50% {color: rgba(255,255,255,1);}
 	100% {width:60%;}
 }
-
 @keyframes stack3 {
 	0% {width:0; color: rgba(255,255,255,0);}
 	50% {color: rgba(255,255,255,1);}
 	100% {width:25%;}
 }
-
 </style>
 <link rel="stylesheet" href="./resources/css/base/jquery-ui.css">
 <script type="text/javascript" src="./resources/js/jquery-ui.js"></script>
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
 <script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -178,12 +174,13 @@ a {
 		<%@include file="./asdqwe.jsp"%>
 	<div id="container">
 		<div class="row">
-			<%@include file="./menu.jsp" %>
-
-			<div id="mainleft" class="col-sm-9">
+			<div class="menubar col-sm-3">
+			<%@include file="./project_menu.jsp" %>
+			</div>
+			<div id="mainleft" class="col-sm-8">
 			
-			<%@include file="./project_content.jsp"%>
-				
+			<jsp:include page="<%=contentPage%>" />
+							
 			</div>
 		</div>
 	</div>
