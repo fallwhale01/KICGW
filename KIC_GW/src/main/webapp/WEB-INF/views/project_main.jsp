@@ -46,7 +46,7 @@
 			</table>
 			
 				<div class="sign" style="padding-top: 100px;">
-				<h3>전체 프로젝트</h3>
+				<h3><a href="project_ing.do">완료 된 프로젝트</a></h3>
 					<table class="greenTable">
 						<thead>
 							<tr>
@@ -63,7 +63,7 @@
 				</div>
 				
 				<div class="sign" style="padding-top: 50px;">
-				<h3>완료 된 프로젝트</h3>
+				<h3>진행 중 프로젝트</h3>
 					<table class="greenTable">
 						<thead>
 							<tr>
