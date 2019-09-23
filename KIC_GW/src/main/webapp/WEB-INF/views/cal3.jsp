@@ -131,6 +131,5 @@ function fn_get_events()
 			</div>
 		</div>
 	</div>
-	
 </body>
 </html>
