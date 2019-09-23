@@ -24,9 +24,6 @@
 .checkin-time, .checkout-time {
 	font-family: "Nanum Gothic", sans-serif;
 }
-.checkin {
-	margin-left: 25px;
-}
 .checkin, .checkout {
 	margin-top: 10px;
 	text-align: center;
@@ -286,7 +283,7 @@ background-color:#fff;      }
 				</div>
 			</div>
 
-			<div id="mainleft" class="col-sm-3">
+			<div id="mainleft" class="col-sm-4">
 				<!-- 공지사항 -->
 				<div class="board">
 					<h3>공지사항</h3>

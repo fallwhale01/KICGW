@@ -88,20 +88,27 @@ tr:nth-child(even){background-color: #f2f2f2}
 						
 						var checkin = checkins.split(' ');
 						var checkout = '';
-						if( checkouts != null || checkouts != '' ) {
+						if( checkouts == '' || checkouts != null ) {
 							checkout = checkouts.split(' ');
+							for ( var i =1; i<=31; i++ ) {
+								var date = $('.date'+i).text();
+								if( date == mdate ) {
+									$( '.checkin'+i ).html(checkin[1].substring(0,8));
+									$( '.checkout'+i ).html(checkout[1].substring(0,8));
+								}
+							}
 						}else {
-							checkout = '';
-						}
-						
-						
-						for ( var i =1; i<=31; i++ ) {
-							var date = $('.date'+i).text();
-							if( date == mdate ) {
-								$( '.checkin'+i ).html(checkin[1].substring(0,8));
-								$( '.checkout'+i ).html(checkout[1].substring(0,8));
+							for ( var i =1; i<=31; i++ ) {
+								var date = $('.date'+i).text();
+								if( date == mdate ) {
+									$( '.checkin'+i ).html(checkin[1].substring(0,8));
+									$( '.checkout'+i ).html('');
+								}
 							}
 						}
+						
+						
+						
 					});
 				}
 			});
