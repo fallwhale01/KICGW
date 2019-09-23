@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-    String contentPage=request.getParameter("contentPage");
-    if(contentPage==null)
-        contentPage="project_create.jsp";
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -184,12 +178,12 @@ a {
 		<%@include file="./asdqwe.jsp"%>
 	<div id="container">
 		<div class="row">
-			<%@include file="./project_menu.jsp" %>
+			<%@include file="./menu.jsp" %>
 
 			<div id="mainleft" class="col-sm-9">
 			
-			<%@include file="./project_create.jsp" %>
-							
+			<%@include file="./project_content.jsp"%>
+				
 			</div>
 		</div>
 	</div>
