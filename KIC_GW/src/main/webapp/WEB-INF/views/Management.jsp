@@ -68,9 +68,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 </style>
 
 <script type="text/javascript" src="./resources/js/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="./resources/js/jquery.animateNumber.min.js"></script>
 <script type="text/javascript">
 	$(document).ready( function() {
+		
 		var manage = function( eno ) {
 			$.ajax({
 				url: './managelist.do',
@@ -106,15 +106,21 @@ tr:nth-child(even){background-color: #f2f2f2}
 								}
 							}
 						}
-						
-						
-						
 					});
 				}
 			});
 		} //end of manage
 		
-		manage("1");
+		manage('1');
+		
+		var asd = $('.checkin23').text();
+		console.log( asd );
+		console.log( 'asd' );
+		var total = function( eno ) {
+			for( var i = 1; i <= 31; i++ ) {
+				console.log($('.checkin'+ i ).text());
+			}
+		}
 	});
 	// 페이지 새로고침
 	 if (self.name != 'reload') {
