@@ -10,14 +10,14 @@ import org.springframework.web.servlet.ModelAndView;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class AddressController {
 	
-	@RequestMapping(value = "/main.do")
+	@RequestMapping(value = "/address.do")
 	public ModelAndView main2( HttpServletRequest request, HttpServletResponse response) {
-		System.out.println( "main 컨트롤러 호출" );
+		System.out.println( "address 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "Main/main" );
+		model.setViewName( "Address/address" );
 		
 		return model;
 	}

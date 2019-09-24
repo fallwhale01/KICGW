@@ -20,7 +20,7 @@ public class ManagementController {
 		System.out.println( "management 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "Management" );
+		model.setViewName( "MyPage/Management" );
 		
 		return model;
 	}
@@ -35,7 +35,7 @@ public class ManagementController {
 		int flag = dao.checkin(date);
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "checkin" );
+		model.setViewName( "MyPage/checkin" );
 		model.addObject( "flag", flag );
 		
 		return model;
@@ -51,7 +51,7 @@ public class ManagementController {
 		int flag = dao.checkout(date);
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "checkout" );
+		model.setViewName( "MyPage/checkout" );
 		model.addObject( "flag", flag );
 		
 		return model;
@@ -68,7 +68,7 @@ public class ManagementController {
 		ManagementTO to = dao.checkinout(eno);
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "checkinout" );
+		model.setViewName( "MyPage/checkinout" );
 		model.addObject( "to", to );
 		
 		return model;
@@ -84,7 +84,7 @@ public class ManagementController {
 		ArrayList<ManagementTO> manageLists = dao.managelist(eno);
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "managelist" );
+		model.setViewName( "MyPage/managelist" );
 		model.addObject("manageLists", manageLists);
 		
 		return model;

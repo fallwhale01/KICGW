@@ -14,8 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kic.cal.MonthTO;
-
 @Controller 
 public class ProjectController {
 
@@ -30,7 +28,7 @@ public class ProjectController {
 		System.out.println( "project 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "project" );
+		model.setViewName( "Project/project" );
 		
 		return model;
 	}
@@ -40,7 +38,7 @@ public class ProjectController {
 		System.out.println( "project_ing 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "project_ing" );
+		model.setViewName( "Project/project_ing" );
 		
 		return model;
 	}
@@ -49,7 +47,7 @@ public class ProjectController {
 		System.out.println( "project_ed 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "project_ed" );
+		model.setViewName( "Project/project_ed" );
 		
 		return model;
 	}
@@ -58,7 +56,7 @@ public class ProjectController {
 		System.out.println( "project_create 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "project_create" );
+		model.setViewName( "Project/project_create" );
 		
 		return model;
 	}
@@ -67,7 +65,7 @@ public class ProjectController {
 		System.out.println( "project_content 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "project_content" );
+		model.setViewName( "Project/project_content" );
 		
 		return model;
 	}

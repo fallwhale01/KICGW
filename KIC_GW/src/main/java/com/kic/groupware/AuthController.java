@@ -14,8 +14,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.kic.cal.MonthTO;
-
 @Controller 
 public class AuthController {
 
@@ -29,7 +27,7 @@ public class AuthController {
 		System.out.println( "auth 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "auth" );
+		model.setViewName( "Auth/auth" );
 		
 		return model;
 	}
@@ -38,7 +36,7 @@ public class AuthController {
 		System.out.println( "auth2 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "auth2" );
+		model.setViewName( "Auth/auth2" );
 		
 		return model;
 	}
@@ -47,7 +45,7 @@ public class AuthController {
 		System.out.println( "auth3 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "auth3" );
+		model.setViewName( "Auth/auth3" );
 		
 		return model;
 	}
@@ -56,7 +54,7 @@ public class AuthController {
 		System.out.println( "auth4 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "auth4" );
+		model.setViewName( "Auth/auth4" );
 		
 		return model;
 	}
@@ -65,7 +63,7 @@ public class AuthController {
 		System.out.println( "auth5 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
-		model.setViewName( "auth5" );
+		model.setViewName( "Auth/auth5" );
 		
 		return model;
 	}
