@@ -37,62 +37,6 @@ th {
 	background-color: #47c9af;
 }
 
-table.greenTable {
-  font-family: Georgia, serif;
-  border: 6px solid #24943A;
-  background-color: #D4EED1;
-  text-align: center;
-  width : 50%;
-}
-table.greenTable td, table.greenTable th {
-  border: 1px solid #24943A;
-  padding: 3px 2px;
-}
-table.greenTable tbody td {
-  font-size: 13px;
-}
-table.greenTable thead {
-  background: #24943A;
-  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  border-bottom: 0px solid #444444;
-}
-table.greenTable thead th {
-  font-size: 19px;
-  font-weight: bold;
-  color: #F0F0F0;
-  text-align: left;
-  border-left: 2px solid #24943A;
-}
-table.greenTable thead th:first-child {
-  border-left: none;
-}
-
-table.greenTable tfoot {
-  font-size: 13px;
-  font-weight: bold;
-  color: #F0F0F0;
-  background: #24943A;
-  background: -moz-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: -webkit-linear-gradient(top, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  background: linear-gradient(to bottom, #5baf6b 0%, #3a9e4d 66%, #24943A 100%);
-  border-top: 1px solid #24943A;
-}
-table.greenTable tfoot td {
-  font-size: 13px;
-}
-table.greenTable tfoot .links {
-  text-align: right;
-}
-table.greenTable tfoot .links a{
-  display: inline-block;
-  background: #FFFFFF;
-  color: #24943A;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
-
 body {
 	margin-top: 40px;
 	font-size: 14px;
@@ -111,28 +55,6 @@ body {
     background-color: green; /* background color */
     border-color: green;     /* border color */
 }
-.brue,
-.brue div,
-.brue span,
-.brue a {
-    background-color: brue; /* background color */
-    border-color: brue;     /* border color */
-}
-.yellow,
-.yellow div,
-.yellow span,
-.yellow a {
-    background-color: yellow; /* background color */
-    border-color: yellow;     /* border color */
-    color: black;
-}
-.red,
-.red div,
-.red span,
-.red a {
-    background-color: red; /* background color */
-    border-color: red;     /* border color */
-}
 .orange,
 .orange div,
 .orange span,
@@ -146,13 +68,6 @@ body {
 .purple a {
     background-color: purple; /* background color */
     border-color: purple;     /* border color */
-}
-.maroon,
-.maroon div,
-.maroon span,
-.maroon a {
-    background-color: maroon; /* background color */
-    border-color: maroon;     /* border color */
 }
 </style>
 <script type='text/javascript'>
@@ -216,6 +131,5 @@ function fn_get_events()
 			</div>
 		</div>
 	</div>
-	
 </body>
 </html>
