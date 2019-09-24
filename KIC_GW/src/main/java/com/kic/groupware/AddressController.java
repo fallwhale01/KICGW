@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AddressController {
 	
 	@RequestMapping(value = "/address.do")
-	public ModelAndView main2( HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView main( HttpServletRequest request, HttpServletResponse response) {
 		System.out.println( "address 컨트롤러 호출" );
 		
 		ModelAndView model = new ModelAndView();
