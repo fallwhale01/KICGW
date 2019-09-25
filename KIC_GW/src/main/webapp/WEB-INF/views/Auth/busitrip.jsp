@@ -224,26 +224,15 @@ li {
 </head>
 <body>
 	<div id="wrapper">
-		<div id="header"></div>
-	    <div id='cssmenu'>
-			<ul>
-			   <li class="home"><a href='./main2.do'>Home</a></li>
-			   <li><a href='./Management.do'>My page</a></li>
-			   <li><a href='./main.do'>주소록</a></li>
-			   <li><a href='#'>게시판</a></li>
-			   <li><a href='./auth.do'>전자결재</a></li>
-			   <li><a href='./project.do'>프로젝트</a></li>
-			   <li><a href='./cal.do'>캘린더</a></li>
-			</ul>
-		</div>
+		<%@include file="../Menu/topmenu.jsp"%>
 		<div id="container">
 		<div class="row">
 		<div class="menubar col-sm-3">
 			<div id='menu'>
 			<ul>
 			   <li onclick="javascript: location.href='./auth.do'"><a>결재목록</a></li>
-			   <li onclick="javascript: location.href='./auth2.do'"><a>휴가신청서</a></li>
-			   <li onclick="javascript: location.href='./auth3.do'"><a>출장신청서</a></li>
+			   <li onclick="javascript: location.href='./vacation.do'"><a>휴가신청서</a></li>
+			   <li onclick="javascript: location.href='./busitrip.do'"><a>출장신청서</a></li>
 			   <li onclick="javascript: location.href='./auth4.do'"><a>교통비신청서</a></li>
 			</ul>
 			</div>
@@ -252,7 +241,7 @@ li {
 				<%@include file="./busitrip.html" %>
 			</div>
 		</div>
-		<a href="#" class="button" style="margin-bottom:100px;margin-right:0px;float:right;text-decoration:none">신청</a>
+		<a href="#" class="button" style="margin-bottom:100px;margin-right:0px;float:right;text-decoration:none" onclick="location.href='./busitrip_ok.do'">신청</a>
 		</div>
 	</div>
 	<script src="./resources/js/bootstrap.bundle.min.js"></script>

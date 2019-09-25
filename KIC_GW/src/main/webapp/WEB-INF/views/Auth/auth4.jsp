@@ -241,8 +241,8 @@ li {
 			<div id="menu">
 				<ul>
 				   <li onclick="javascript: location.href='./auth.do'"><a>결재목록</a></li>
-				   <li onclick="javascript: location.href='./auth2.do'"><a>휴가신청서</a></li>
-				   <li onclick="javascript: location.href='./auth3.do'"><a>출장신청서</a></li>
+				   <li onclick="javascript: location.href='./vacation.do'"><a>휴가신청서</a></li>
+				   <li onclick="javascript: location.href='./busitrip.do'"><a>출장신청서</a></li>
 				   <li onclick="javascript: location.href='./auth4.do'"><a>교통비신청서</a></li>
 				</ul>
 			</div>
